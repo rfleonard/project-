@@ -1,0 +1,10 @@
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\bin\Debug\MotoristPenaltyPoints.Tests.dll.config
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\bin\Debug\MotoristPenaltyPoints.Tests.dll
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\bin\Debug\MotoristPenaltyPoints.Tests.pdb
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\bin\Debug\EntityFramework.dll
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\bin\Debug\MotoristPenaltyPoints.dll
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\bin\Debug\MotoristPenaltyPoints.pdb
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\bin\Debug\EntityFramework.xml
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\obj\Debug\MotoristPenaltyPoints.Tests.dll
+C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\MotoristPenaltyPoints\MotoristPenaltyPoints.Tests\obj\Debug\MotoristPenaltyPoints.Tests.pdb

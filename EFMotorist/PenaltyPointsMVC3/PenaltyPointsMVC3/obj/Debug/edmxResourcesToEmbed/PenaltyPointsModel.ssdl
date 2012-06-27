@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PenaltyPointsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PenaltyPointsModelStoreContainer">
+    <EntitySet Name="ListedOffences" EntityType="PenaltyPointsModel.Store.ListedOffences" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OffencesHistory" EntityType="PenaltyPointsModel.Store.OffencesHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VehicleDetails" EntityType="PenaltyPointsModel.Store.VehicleDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DriverDetails" EntityType="PenaltyPointsModel.Store.DriverDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SummonsDetails" EntityType="PenaltyPointsModel.Store.SummonsDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NotificationsIssued" EntityType="PenaltyPointsModel.Store.NotificationsIssued" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ListedOffencesOffencesHistory" Association="PenaltyPointsModel.Store.ListedOffencesOffencesHistory">
+      <End Role="ListedOffences" EntitySet="ListedOffences" />
+      <End Role="OffencesHistory" EntitySet="OffencesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="OffencesHistorySummonsDetails" Association="PenaltyPointsModel.Store.OffencesHistorySummonsDetails">
+      <End Role="OffencesHistory" EntitySet="OffencesHistory" />
+      <End Role="SummonsDetails" EntitySet="SummonsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="DriverDetailsOffencesHistory" Association="PenaltyPointsModel.Store.DriverDetailsOffencesHistory">
+      <End Role="DriverDetails" EntitySet="DriverDetails" />
+      <End Role="OffencesHistory" EntitySet="OffencesHistory" />
+    </AssociationSet>
+    <AssociationSet Name="VehicleDetailsOffencesHistory" Association="PenaltyPointsModel.Store.VehicleDetailsOffencesHistory">
+      <End Role="VehicleDetails" EntitySet="VehicleDetails" />
+      <End Role="OffencesHistory" EntitySet="OffencesHistory" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ListedOffences">
+    <Key>
+      <PropertyRef Name="LoId" />
+    </Key>
+    <Property Name="LoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LoDesc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Lo28Days" Type="int" Nullable="false" />
+    <Property Name="Lo56days" Type="int" Nullable="false" />
+    <Property Name="LoCourtPoints" Type="int" Nullable="false" />
+    <Property Name="LoFine28" Type="decimal" Nullable="false" />
+    <Property Name="LoFine56" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OffencesHistory">
+    <Key>
+      <PropertyRef Name="OhId" />
+    </Key>
+    <Property Name="OhId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OhLoid" Type="int" Nullable="false" />
+    <Property Name="OhRegistration" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OhLicenceNo" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="OhLocation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OhOffenceDate" Type="datetime" Nullable="false" />
+    <Property Name="OhStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OhPointsApplied" Type="int" Nullable="false" />
+    <Property Name="OhPointsDate" Type="datetime" Nullable="false" />
+    <Property Name="VehicleDetailsVdRegistration" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="VehicleDetails">
+    <Key>
+      <PropertyRef Name="VdRegistration" />
+    </Key>
+    <Property Name="VdRegistration" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="VdType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VdMake" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VdCubicCapacity" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DriverDetails">
+    <Key>
+      <PropertyRef Name="DdLicenceNo" />
+    </Key>
+    <Property Name="DdLicenceNo" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="DdName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DdAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DdAccumulatedPoints" Type="int" Nullable="false" />
+    <Property Name="DdLicenceStatus" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SummonsDetails">
+    <Key>
+      <PropertyRef Name="SdId" />
+    </Key>
+    <Property Name="SdId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SdDate" Type="datetime" Nullable="false" />
+    <Property Name="SdJudgement" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NotificationsIssued">
+    <Key>
+      <PropertyRef Name="NiLicenceNo" />
+    </Key>
+    <Property Name="NiLicenceNo" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="NiName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NiPoints" Type="int" Nullable="false" />
+    <Property Name="NiDesc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NiDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="ListedOffencesOffencesHistory">
+    <End Role="ListedOffences" Type="PenaltyPointsModel.Store.ListedOffences" Multiplicity="1" />
+    <End Role="OffencesHistory" Type="PenaltyPointsModel.Store.OffencesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListedOffences">
+        <PropertyRef Name="LoId" />
+      </Principal>
+      <Dependent Role="OffencesHistory">
+        <PropertyRef Name="OhLoid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OffencesHistorySummonsDetails">
+    <End Role="OffencesHistory" Type="PenaltyPointsModel.Store.OffencesHistory" Multiplicity="1" />
+    <End Role="SummonsDetails" Type="PenaltyPointsModel.Store.SummonsDetails" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="OffencesHistory">
+        <PropertyRef Name="OhId" />
+      </Principal>
+      <Dependent Role="SummonsDetails">
+        <PropertyRef Name="SdId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DriverDetailsOffencesHistory">
+    <End Role="DriverDetails" Type="PenaltyPointsModel.Store.DriverDetails" Multiplicity="1" />
+    <End Role="OffencesHistory" Type="PenaltyPointsModel.Store.OffencesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DriverDetails">
+        <PropertyRef Name="DdLicenceNo" />
+      </Principal>
+      <Dependent Role="OffencesHistory">
+        <PropertyRef Name="OhLicenceNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehicleDetailsOffencesHistory">
+    <End Role="VehicleDetails" Type="PenaltyPointsModel.Store.VehicleDetails" Multiplicity="1" />
+    <End Role="OffencesHistory" Type="PenaltyPointsModel.Store.OffencesHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleDetails">
+        <PropertyRef Name="VdRegistration" />
+      </Principal>
+      <Dependent Role="OffencesHistory">
+        <PropertyRef Name="VehicleDetailsVdRegistration" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

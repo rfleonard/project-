@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PenaltyPointsModelStoreContainer" CdmEntityContainer="PenaltyPointsContainer">
+    <EntitySetMapping Name="ListedOffences">
+      <EntityTypeMapping TypeName="IsTypeOf(PenaltyPointsModel.ListedOffences)">
+        <MappingFragment StoreEntitySet="ListedOffences">
+          <ScalarProperty Name="LoId" ColumnName="LoId" />
+          <ScalarProperty Name="LoName" ColumnName="LoName" />
+          <ScalarProperty Name="LoDesc" ColumnName="LoDesc" />
+          <ScalarProperty Name="Lo28Days" ColumnName="Lo28Days" />
+          <ScalarProperty Name="Lo56days" ColumnName="Lo56days" />
+          <ScalarProperty Name="LoCourtPoints" ColumnName="LoCourtPoints" />
+          <ScalarProperty Name="LoFine28" ColumnName="LoFine28" />
+          <ScalarProperty Name="LoFine56" ColumnName="LoFine56" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OffencesHistory">
+      <EntityTypeMapping TypeName="IsTypeOf(PenaltyPointsModel.OffencesHistory)">
+        <MappingFragment StoreEntitySet="OffencesHistory">
+          <ScalarProperty Name="OhId" ColumnName="OhId" />
+          <ScalarProperty Name="OhLoid" ColumnName="OhLoid" />
+          <ScalarProperty Name="OhRegistration" ColumnName="OhRegistration" />
+          <ScalarProperty Name="OhLicenceNo" ColumnName="OhLicenceNo" />
+          <ScalarProperty Name="OhLocation" ColumnName="OhLocation" />
+          <ScalarProperty Name="OhOffenceDate" ColumnName="OhOffenceDate" />
+          <ScalarProperty Name="OhStatus" ColumnName="OhStatus" />
+          <ScalarProperty Name="OhPointsApplied" ColumnName="OhPointsApplied" />
+          <ScalarProperty Name="OhPointsDate" ColumnName="OhPointsDate" />
+          <ScalarProperty Name="VehicleDetailsVdRegistration" ColumnName="VehicleDetailsVdRegistration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(PenaltyPointsModel.VehicleDetails)">
+        <MappingFragment StoreEntitySet="VehicleDetails">
+          <ScalarProperty Name="VdRegistration" ColumnName="VdRegistration" />
+          <ScalarProperty Name="VdType" ColumnName="VdType" />
+          <ScalarProperty Name="VdMake" ColumnName="VdMake" />
+          <ScalarProperty Name="VdCubicCapacity" ColumnName="VdCubicCapacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(PenaltyPointsModel.DriverDetails)">
+        <MappingFragment StoreEntitySet="DriverDetails">
+          <ScalarProperty Name="DdLicenceNo" ColumnName="DdLicenceNo" />
+          <ScalarProperty Name="DdName" ColumnName="DdName" />
+          <ScalarProperty Name="DdAddress" ColumnName="DdAddress" />
+          <ScalarProperty Name="DdAccumulatedPoints" ColumnName="DdAccumulatedPoints" />
+          <ScalarProperty Name="DdLicenceStatus" ColumnName="DdLicenceStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SummonsDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(PenaltyPointsModel.SummonsDetails)">
+        <MappingFragment StoreEntitySet="SummonsDetails">
+          <ScalarProperty Name="SdId" ColumnName="SdId" />
+          <ScalarProperty Name="SdDate" ColumnName="SdDate" />
+          <ScalarProperty Name="SdJudgement" ColumnName="SdJudgement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationsIssued">
+      <EntityTypeMapping TypeName="IsTypeOf(PenaltyPointsModel.NotificationsIssued)">
+        <MappingFragment StoreEntitySet="NotificationsIssued">
+          <ScalarProperty Name="NiLicenceNo" ColumnName="NiLicenceNo" />
+          <ScalarProperty Name="NiName" ColumnName="NiName" />
+          <ScalarProperty Name="NiPoints" ColumnName="NiPoints" />
+          <ScalarProperty Name="NiDesc" ColumnName="NiDesc" />
+          <ScalarProperty Name="NiDate" ColumnName="NiDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
