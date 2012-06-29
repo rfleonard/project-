@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OOPenaltyPoints.MvcApplication" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIQAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Controllers.AccountController" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgAAAAAAAAAAAAAABAAAEAAAAAAQAIAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Controllers.HomeController" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.ChangePasswordModel" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.LogOnModel" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQAAAAAgAAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.RegisterModel" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAQAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.DriverDetail" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAABAAAAQAAAAEAAIAAAA=</HashCode>
+      <FileName>Models\DriverDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.NotificationsIssued" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAABAAAAACAAAAAAAAAAAACAAAAgAA=</HashCode>
+      <FileName>Models\NotificationsIssued.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.DriverOffence">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABgAAAAAAAAIAAAAAAgAAAAAEAEAAQAABAAAA=</HashCode>
+      <FileName>Models\DriverOffence.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.PenaltyPointsDataContext" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAIAAAAgAAAAAEAAAAQCAAAAAA=</HashCode>
+      <FileName>Models\PenaltyPointsDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.SummonsDetail" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAQgAA=</HashCode>
+      <FileName>Models\SummonsDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOPenaltyPoints.Models.VehicleDetail">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAACAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\VehicleDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
