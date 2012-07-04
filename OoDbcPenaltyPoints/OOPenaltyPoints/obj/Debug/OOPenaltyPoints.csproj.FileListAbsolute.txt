@@ -25,3 +25,8 @@ C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Vers
 C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\OoDbcPenaltyPoints\OOPenaltyPoints\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\OoDbcPenaltyPoints\OOPenaltyPoints\obj\Debug\OOPenaltyPoints.dll
 C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\OoDbcPenaltyPoints\OOPenaltyPoints\obj\Debug\OOPenaltyPoints.pdb
+C:\Users\Ronan\Documents\College\Enterprise Frameworks\OoDbcPenaltyPoints\OOPenaltyPoints\bin\OOPenaltyPoints.dll
+C:\Users\Ronan\Documents\College\Enterprise Frameworks\OoDbcPenaltyPoints\OOPenaltyPoints\bin\OOPenaltyPoints.pdb
+C:\Users\Ronan\Documents\College\Enterprise Frameworks\OoDbcPenaltyPoints\OOPenaltyPoints\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ronan\Documents\College\Enterprise Frameworks\OoDbcPenaltyPoints\OOPenaltyPoints\obj\Debug\OOPenaltyPoints.dll
+C:\Users\Ronan\Documents\College\Enterprise Frameworks\OoDbcPenaltyPoints\OOPenaltyPoints\obj\Debug\OOPenaltyPoints.pdb

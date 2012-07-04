@@ -6,27 +6,36 @@ using OOPenaltyPoints.Models;
 using System.Data.Entity;
 
 
+
+
 namespace OOPenaltyPoints.Models
 {
-    [Database]
-    public class PenaltyPointsDbContext : System.Data.Entity.DbContext
+
+
+
+    public class OOPenaltyPointsContext : System.Data.Entity.DbContext
     {
 
+        public OOPenaltyPointsContext(string connection = null)
+          : base("OoDbcPenaltyPointsDb")
+       { }
 
-        public PenaltyPointsDbContext()
-            : base("OoDbcPenaltyPointsDb")
-        { }
-
-        public DbSet<ListedOffence> ListedOffences;
-        public DbSet<DriverDetail> DriverDetails;
-        public DbSet<NotificationsIssued> NotificationsIssueds;
-        public DbSet<SummonsDetail> SummonsDetails;
-        public DbSet<VehicleDetail> VehicleDetails;
         public DbSet<DriverOffence> DriverOffences;
 
 
 
+        //public DbSet<ListedOffence> ListedOffences;
+
+       // public DbSet<DriverDetail>  DriverDetails;
+       // public DbSet<VehicleDetail> VehicleDetails;
+        
+       // public DbSet<SummonsDetail> SummonsDetails;
+       // public DbSet<NotificationsIssued> NotificationsIssueds;
+ 
+       
+
+       
+
     }
 }
-
 

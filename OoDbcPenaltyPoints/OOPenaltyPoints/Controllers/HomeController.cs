@@ -14,15 +14,16 @@ namespace OOPenaltyPoints.Controllers
         {
             bool databaseExists = false;
  
-           PenaltyPointsDbContext db = new PenaltyPointsDbContext();
+           OOPenaltyPointsContext db = new OOPenaltyPointsContext();
            
             databaseExists = db.Database.Exists();
 
             if (databaseExists)
             {
-
+              
                 // for development purposes only
                 db.Database.Delete();
+                    
                 db.Database.Create();
  
           }

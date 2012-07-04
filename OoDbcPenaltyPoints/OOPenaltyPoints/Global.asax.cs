@@ -29,6 +29,15 @@ namespace OOPenaltyPoints
 
                );
 
+           routes.MapRoute(
+    "ListedOffences", // Route name
+   "{controller}/{action}/{id}", // URL with parameters
+   new { controller = "ListedOffences", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+
+
+   );
+
+
 
 
         }

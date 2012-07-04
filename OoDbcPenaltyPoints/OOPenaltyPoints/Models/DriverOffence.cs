@@ -7,24 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-    using System;
-    using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.Data.Linq;
-    using System.Data.Linq.Mapping;
+using System.Data.Linq.Mapping;
+
 
 namespace OOPenaltyPoints.Models
 {    
     [Table(Name = "DriverOffences")]
     public class DriverOffence
     {
-
-        //[Column(IsPrimaryKey = true, IsDbGenerated = true)] //original
-        //[Column(IsPrimaryKey = true, Storage = "_OhId", IsDbGenerated = false)]     
-        //[Column(IsPrimaryKey = true, IsDbGenerated = true, Storage = "_OhId")] 
-
-        [Column(IsPrimaryKey = true, IsDbGenerated = true)] //original
+             
+         
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)] //ORIGINAL
         private int doId { get; set; }
-       
         
         [Column]
         public System.DateTime doOffenceDate { get; set; }
@@ -38,12 +35,19 @@ namespace OOPenaltyPoints.Models
  
         
 
-        public List<ListedOffence> ListedOffences { get; set; } //lookup only
-        public List<DriverDetail> DriverDetails { get; set; }
-        public List<VehicleDetail> VehicleDetails { get; set; }
+        //public List<ListedOffence> ListedOffences { get; set; } //lookup only
+        //public List<DriverDetail> DriverDetails { get; set; }
+        //public List<VehicleDetail> VehicleDetails { get; set; }
 
         public DriverOffence()
         {
+        }
+        public DriverOffence(System.DateTime _doOffenceDate,string _doStatus,int _doPointsApplied ,System.DateTime _doPointsDate)
+        {
+            this.doOffenceDate = _doOffenceDate;
+            this.doStatus = _doStatus;
+            this.doPointsApplied = _doPointsApplied;
+            this.doPointsDate = _doPointsDate;
         }
          
     
