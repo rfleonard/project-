@@ -1,0 +1,35 @@
+﻿@model OOPenaltyPoints.Models.DriverDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DriverDetail</legend>
+
+    <div class="display-label">DdName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DdName)
+    </div>
+
+    <div class="display-label">DdAddress</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DdAddress)
+    </div>
+
+    <div class="display-label">DdAccumulatedPoints</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DdAccumulatedPoints)
+    </div>
+
+    <div class="display-label">DdLicenceStatus</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DdLicenceStatus)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
