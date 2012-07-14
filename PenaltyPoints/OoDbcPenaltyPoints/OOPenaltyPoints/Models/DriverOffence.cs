@@ -37,6 +37,8 @@ namespace OOPenaltyPoints.Models
         public int doPointsApplied { get; set; }
         [Column(DbType = " NULL")]
         public System.DateTime doPointsDate { get; set; }
+        [Column(DbType = " NULL")]
+        public string doGardaId { get; set; }
 
         //m:1
         [Column] public virtual ListedOffence ListedOffence { get; set; }
