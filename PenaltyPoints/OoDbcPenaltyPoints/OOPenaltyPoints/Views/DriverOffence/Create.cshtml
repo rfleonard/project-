@@ -1,0 +1,100 @@
+﻿@model OOPenaltyPoints.Models.DriverOffence
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+ 
+       <fieldset  style="color: black ; background-color : #B8B8B8 " >
+        <legend>DriverOffence</legend>
+           <br />
+            <fieldset style="background-color : white">
+            <legend>OffenceDetails</legend>
+            <br />
+           
+            @Html.LabelFor(model => model.doRegistration)
+            @Html.EditorFor(model => model.doRegistration)
+            @Html.ValidationMessageFor(model => model.doRegistration)
+            @Html.LabelFor(model => model.doLicenceNo)
+            @Html.EditorFor(model => model.doLicenceNo)
+            @Html.ValidationMessageFor(model => model.doLicenceNo)
+
+            @Html.LabelFor(model => model.doOffenceDate)
+            @Html.EditorFor(model => model.doOffenceDate)
+            @Html.ValidationMessageFor(model => model.doOffenceDate)
+
+            @Html.LabelFor(model => model.doStatus)
+            @Html.EditorFor(model => model.doStatus)
+            @Html.ValidationMessageFor(model => model.doStatus)<br /><br />
+
+            @Html.LabelFor(model => model.doPointsApplied)
+            @Html.EditorFor(model => model.doPointsApplied)
+            @Html.ValidationMessageFor(model => model.doPointsApplied)
+
+            @Html.LabelFor(model => model.doPointsDate)
+            @Html.EditorFor(model => model.doPointsDate)
+            @Html.ValidationMessageFor(model => model.doPointsDate)<br />
+
+            </fieldset>
+        <!--------------------------------->
+         <fieldset style="background-color : white">
+            <legend>DriverDetails</legend>
+
+            @Html.LabelFor(model => model.DriverDetail.DdName)
+            @Html.EditorFor(model => model.DriverDetail.DdName)
+            @Html.ValidationMessageFor(model => model.DriverDetail.DdName)
+
+            @Html.LabelFor(model => model.DriverDetail.DdAddress)
+            @Html.EditorFor(model => model.DriverDetail.DdAddress)
+            @Html.ValidationMessageFor(model => model.DriverDetail.DdAddress)<br /><br />
+
+            @Html.LabelFor(model => model.DriverDetail.DdAccumulatedPoints)
+            @Html.EditorFor(model => model.DriverDetail.DdAccumulatedPoints)
+            @Html.ValidationMessageFor(model => model.DriverDetail.DdAccumulatedPoints)
+
+            @Html.LabelFor(model => model.DriverDetail.DdLicenceStatus)
+            @Html.EditorFor(model => model.DriverDetail.DdLicenceStatus)
+            @Html.ValidationMessageFor(model => model.DriverDetail.DdLicenceStatus)<br />
+
+         </fieldset>
+
+      
+    
+         <fieldset style="background-color : white">
+            <legend>VehicleDetails</legend>
+            <br />
+                  
+            @Html.LabelFor(model => model.VehicleDetails.VdType)
+            @Html.EditorFor(model => model.VehicleDetails.VdType)
+            @Html.ValidationMessageFor(model => model.VehicleDetails.VdType)
+
+            @Html.LabelFor(model => model.VehicleDetails.VdMake)
+            @Html.EditorFor(model => model.VehicleDetails.VdMake)
+            @Html.ValidationMessageFor(model => model.VehicleDetails.VdMake)<br /><br />
+
+            @Html.LabelFor(model => model.VehicleDetails.VdCubicCapacity)
+            @Html.EditorFor(model => model.VehicleDetails.VdCubicCapacity)
+            @Html.ValidationMessageFor(model => model.VehicleDetails.VdCubicCapacity)
+ 
+        </fieldset>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+ 
+    
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

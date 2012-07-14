@@ -1,0 +1,48 @@
+﻿@model OOPenaltyPoints.Models.DriverOffence
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>DriverOffence</legend>
+
+    <div class="display-label">doOffenceDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.doOffenceDate)
+    </div>
+
+    <div class="display-label">doRegistration</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.doRegistration)
+    </div>
+
+    <div class="display-label">doLicenceNo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.doLicenceNo)
+    </div>
+
+    <div class="display-label">doStatus</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.doStatus)
+    </div>
+
+    <div class="display-label">doPointsApplied</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.doPointsApplied)
+    </div>
+
+    <div class="display-label">doPointsDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.doPointsDate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

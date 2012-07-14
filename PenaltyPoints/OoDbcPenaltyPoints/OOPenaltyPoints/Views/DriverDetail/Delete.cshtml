@@ -1,0 +1,38 @@
+﻿@model OOPenaltyPoints.Models.DriverDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>DriverDetail</legend>
+
+    <div class="display-label">DdName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DdName)
+    </div>
+
+    <div class="display-label">DdAddress</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DdAddress)
+    </div>
+
+    <div class="display-label">DdAccumulatedPoints</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DdAccumulatedPoints)
+    </div>
+
+    <div class="display-label">DdLicenceStatus</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DdLicenceStatus)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
