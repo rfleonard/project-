@@ -1,45 +1,18 @@
-﻿@model OOPenaltyPoints.Models.DriverOffence
+﻿@model OOPenaltyPoints.Models.ViewModel.DriverOffenceUI
 
 @{
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Delete A Driver Offence</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>DriverOffence</legend>
+<h3>Are you sure you want to delete the driving 
+offence @Html.DisplayFor(model => model.description)<br /> 
+committed by @Html.DisplayFor(model => model.FName) 
+@Html.DisplayFor(model => model.SName) on the 
+@Html.DisplayFor(model => model.offenceDate) at 
+@Html.DisplayFor(model => model.location).</h3>
 
-    <div class="display-label">doOffenceDate</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.doOffenceDate)
-    </div>
-
-    <div class="display-label">doRegistration</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.doRegistration)
-    </div>
-
-    <div class="display-label">doLicenceNo</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.doLicenceNo)
-    </div>
-
-    <div class="display-label">doStatus</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.doStatus)
-    </div>
-
-    <div class="display-label">doPointsApplied</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.doPointsApplied)
-    </div>
-
-    <div class="display-label">doPointsDate</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.doPointsDate)
-    </div>
-</fieldset>
 @using (Html.BeginForm()) {
     <p>
         <input type="submit" value="Delete" /> |

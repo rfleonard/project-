@@ -1,61 +1,45 @@
-﻿@model IEnumerable<OOPenaltyPoints.Models.DriverOffence>
+﻿@model IEnumerable<OOPenaltyPoints.Models.ViewModel.GetDriverOffenceUI>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Index Of Driver Offences Committed.</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>
     <tr>
-        <th>
-            doOffenceDate
-        </th>
-        <th>
-            doRegistration
-        </th>
-        <th>
-            doLicenceNo
-        </th>
-        <th>
-            doStatus
-        </th>
-        <th>
-            doPointsApplied
-        </th>
-        <th>
-            doPointsDate
-        </th>
+
+        <th>Description:</th>
+        <th>Firstname:</th>
+        <th>Surname:</th>
+        <th>Licence:</th>
+        <th>Licence Status:</th>
+        <th>Registration:</th>
+        <th>Location:</th>
+        <th>Date:</th>
+        <th>Offence Status:</th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        
+        <td>@Html.DisplayFor(modelItem => item.description)</td>
+        <td>@Html.DisplayFor(modelItem => item.FName)</td>
+        <td>@Html.DisplayFor(modelItem => item.SName)</td>
+        <td>@Html.DisplayFor(modelItem => item.LicenceNo)</td>
+        <td>@Html.DisplayFor(modelItem => item.LicenceStatus)</td>
+        <td>@Html.DisplayFor(modelItem => item.Registration)</td>
+        <td>@Html.DisplayFor(modelItem => item.location)</td>
+        <td>@Html.DisplayFor(modelItem => item.offenceDate)</td>
+        <td>@Html.DisplayFor(modelItem => item.status)</td>
         <td>
-            @Html.DisplayFor(modelItem => item.doOffenceDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.doRegistration)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.doLicenceNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.doStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.doPointsApplied)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.doPointsDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
 }

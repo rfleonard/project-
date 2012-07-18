@@ -29,27 +29,49 @@ namespace OOPenaltyPoints.Models
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; } 
-        //[Column]public string DdLicenceNo { get; set; }
+
+        //CC - Added DdLicenceNo
         [Column(DbType = "NOT NULL")]
-        public string DdName { get; set; }
+        public string DdLicenceNo { get; set; }
+
+        //CC - Updated DdName to DdFName and DdSName
         [Column(DbType = "NOT NULL")]
-        public string DdAddress { get; set; }
-        [Column(DbType = "NULL")]
-        public int DdAccumulatedPoints { get; set; }
+        public string DdFName { get; set; }
+        [Column(DbType = "NOT NULL")]
+        public string DdSName { get; set; }
+        [Column(DbType = "NOT NULL")]
+
+        //CC - Updated DdAddress to DdAddress1, DdAddress2, DdAddress3
+        public string DdAddress1 { get; set; }
+        [Column(DbType = "NOT NULL")]
+        public string DdAddress2 { get; set; }
+        [Column(DbType = "NOT NULL")]
+        public string DdAddress3 { get; set; }
+
+        //CC - Removed DdAccumlatedPoints
+        //[Column(DbType = "NULL")]
+       // public int DdAccumulatedPoints { get; set; }
+        
+        //CC -Updated DdLicenceStatus to bool type
         [Column(DbType = "NOT NULL")]
         public string DdLicenceStatus { get; set; }
 
-
+        //CC-commented out Ilists<DriverOffence> relationship
         //1:m
-        [Column]public virtual IList<DriverOffence> DriverOffences { get; set; }
+        //[Column(DbType = "NOT NULL")]
+        //public virtual IList<DriverOffence> DriverOffences { get; set; }
 
         public DriverDetail() { }
-        public DriverDetail(string _DdName, string _DdAddress, int _DdAccumulatedPoints, string _DdLicenceStatus)
+
+        //CC - Updated constructor
+        public DriverDetail(string _DdLicenceNo, string _DdFName, string _DdSName, string _DdAddress1, string _DdAddress2, string _DdAddress3, string _DdLicenceStatus)
         {
-            
-            this.DdName = _DdName;
-            this.DdAddress = _DdAddress;
-            this.DdAccumulatedPoints=_DdAccumulatedPoints;
+            this.DdLicenceNo = _DdLicenceNo;
+            this.DdFName = _DdFName;
+            this.DdSName = _DdSName;
+            this.DdAddress1 = _DdAddress1;
+            this.DdAddress2 = _DdAddress2;
+            this.DdAddress3 = _DdAddress3;
             this.DdLicenceStatus =_DdLicenceStatus;
         }
     

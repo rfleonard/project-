@@ -26,11 +26,14 @@ namespace OOPenaltyPoints.DAL
             return (db.DriverOffences.ToList());
         }
 
-        public DriverOffence CreateDriverOffence(DriverOffence driveroffence)
+        //CC - changed return type for CreateDriverOffence.
+        //public DriverOffence CreateDriverOffence(DriverOffence driveroffence)
+        public int CreateDriverOffence(DriverOffence driveroffence)
         {
             db.DriverOffences.Add(driveroffence);
             db.SaveChanges();
-            return null;
+            return driveroffence.Id;
+            //return null;
         }
 
         public DriverOffence DeleteDriverOffenceById(int id)

@@ -22,8 +22,8 @@ namespace OOPenaltyPoints.Controllers
             {
               
                 // for development purposes only
-               db.Database.Delete();
-               db.Database.Create();
+               //db.Database.Delete();
+               //db.Database.Create();
  
           }
            else

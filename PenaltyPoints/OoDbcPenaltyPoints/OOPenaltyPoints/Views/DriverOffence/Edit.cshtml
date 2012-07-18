@@ -1,4 +1,4 @@
-﻿@model OOPenaltyPoints.Models.DriverOffence
+﻿@model OOPenaltyPoints.Models.ViewModel.DriverOffenceUI
 
 @{
     ViewBag.Title = "Edit";
@@ -12,57 +12,105 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>DriverOffence</legend>
+        <legend>Fill in the details of the penalty point offence and click 'Save' button when done.</legend>
+           <br />
 
-        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.id)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.doOffenceDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.doOffenceDate)
-            @Html.ValidationMessageFor(model => model.doOffenceDate)
-        </div>
+        <!--------Details of driving offence committed ----------->
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.doRegistration)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.doRegistration)
-            @Html.ValidationMessageFor(model => model.doRegistration)
-        </div>
+            <fieldset>
+            <legend>Driving Offence Information:</legend>
+            <br />
+            @Html.LabelFor(model => model.description,"Description:")
+            @Html.EditorFor(model => model.description)
+            @Html.ValidationMessageFor(model => model.description,"Required.")
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.doLicenceNo)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.doLicenceNo)
-            @Html.ValidationMessageFor(model => model.doLicenceNo)
-        </div>
+            @Html.LabelFor(model => model.gardaId, "Garda Identification No:")
+            @Html.EditorFor(model => model.gardaId)
+            @Html.ValidationMessageFor(model => model.gardaId, "Required.")
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.doStatus)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.doStatus)
-            @Html.ValidationMessageFor(model => model.doStatus)
-        </div>
+            <br /><br />
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.doPointsApplied)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.doPointsApplied)
-            @Html.ValidationMessageFor(model => model.doPointsApplied)
-        </div>
+            @Html.LabelFor(model => model.location, "Location:")
+            @Html.EditorFor(model => model.location)
+            @Html.ValidationMessageFor(model => model.location, "Required.")
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.doPointsDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.doPointsDate)
-            @Html.ValidationMessageFor(model => model.doPointsDate)
-        </div>
+            @Html.LabelFor(model => model.offenceDate, "Date:")
+            @Html.EditorFor(model => model.offenceDate)
+            @Html.ValidationMessageFor(model => model.offenceDate, "Required.")
+
+            <br /><br />
+
+            @Html.LabelFor(model => model.status, "Status:")
+            @Html.EditorFor(model => model.status)
+            @Html.ValidationMessageFor(model => model.status, "Required.")
+            <br />
+            </fieldset>
+            
+<!--------Details of driver who committed the offence ----------->
+
+            <fieldset>
+            <legend>Driver Information</legend>
+            <br />
+            @Html.LabelFor(model => model.LicenceNo, "Drivers licence number (or PPSN No):")
+            @Html.EditorFor(model => model.LicenceNo)
+            @Html.ValidationMessageFor(model => model.LicenceNo, "Required.")
+
+            @Html.LabelFor(model => model.LicenceStatus, "Status:")
+            @Html.EditorFor(model => model.LicenceStatus)
+            @Html.ValidationMessageFor(model => model.LicenceStatus, "Required.")
+
+            <br /><br />
+
+            @Html.LabelFor(model => model.FName,"First Name:")
+            @Html.EditorFor(model => model.FName)
+            @Html.ValidationMessageFor(model => model.FName, "Required.")
+
+            @Html.LabelFor(model => model.SName,"Surname:")
+            @Html.EditorFor(model => model.SName)
+            @Html.ValidationMessageFor(model => model.SName, "Required.")
+
+            <br /><br />
+
+            @Html.LabelFor(model => model.Address1, "Address:")
+            @Html.EditorFor(model => model.Address1)
+            @Html.ValidationMessageFor(model => model.Address1, "Required.")
+
+            @Html.LabelFor(model => model.Address2, "Town etc:")
+            @Html.EditorFor(model => model.Address2)
+            @Html.ValidationMessageFor(model => model.Address2, "Required.")
+
+            @Html.LabelFor(model => model.Address3, "County:")
+            @Html.EditorFor(model => model.Address3)
+            @Html.ValidationMessageFor(model => model.Address3, "Required.")
+            <br />
+         </fieldset>
+         
+            <!--------Details of vehicle used in the committed offence ----------->
+   
+         <fieldset>
+            <legend>Vehicle Information</legend>
+            <br />
+            @Html.LabelFor(model => model.Registration, "Registration No:")
+            @Html.EditorFor(model => model.Registration)
+            @Html.ValidationMessageFor(model => model.Registration, "Required.") 
+
+            @Html.LabelFor(model => model.Make, "Make:")
+            @Html.EditorFor(model => model.Make)
+            @Html.ValidationMessageFor(model => model.Make, "Required.")
+
+            <br /><br />
+                 
+            @Html.LabelFor(model => model.Type, "Type:")
+            @Html.EditorFor(model => model.Type)
+            @Html.ValidationMessageFor(model => model.Type, "Required.")
+
+            @Html.LabelFor(model => model.Capacity, "Capacity:")
+            @Html.EditorFor(model => model.Capacity)
+            @Html.ValidationMessageFor(model => model.Capacity, "Required.")
+            <br />
+        </fieldset>
 
         <p>
             <input type="submit" value="Save" />

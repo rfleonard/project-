@@ -19,24 +19,31 @@ namespace OOPenaltyPoints.Models
     {
          [Column(IsPrimaryKey = true, IsDbGenerated = true)]
          public int Id { get; set; } 
-         //[Column]public string VdRegistration { get; set; }
+        
+        //CC - Added VdRegistration
+         [Column(DbType = "NOT NULL")]
+         public string VdRegistration { get; set; }
+
          [Column(DbType = "NOT NULL")]
          public string VdType { get; set; }
          [Column(DbType = "NOT NULL")]
          public string VdMake { get; set; }
          [Column(DbType = "NULL")]   //null
          public decimal VdCubicCapacity { get; set; }
- 
+
+         //CC-commented out Ilits<DriverOffence> relationship
          //1:m
-         [Column] public virtual IList<DriverOffence> DriverOffences { get; set; }
+         //[Column(DbType = "NOT NULL")]
+         //public virtual IList<DriverOffence> DriverOffences { get; set; }
 
          public VehicleDetail()
         {
         }
 
-         public VehicleDetail( string _VdType, string _VdMake, decimal _VdCubicCapacity)
+        //CC - Updated Constructor
+         public VehicleDetail( string _VdRegistration, string _VdType, string _VdMake, decimal _VdCubicCapacity)
         {
-            //this.VdRegistration =_VdRegistration;
+            this.VdRegistration =_VdRegistration;
             this.VdType=_VdType;
             this.VdMake=_VdMake;
             this.VdCubicCapacity = _VdCubicCapacity;

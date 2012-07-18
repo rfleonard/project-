@@ -40,12 +40,14 @@ namespace OOPenaltyPoints.DAL
            return null;
        }
 
-
-       public ListedOffence EditListedOffence(ListedOffence listedoffence)
+        // cc - changed return type to int
+      // public ListedOffence EditListedOffence(ListedOffence listedoffence)
+       public int EditListedOffence(ListedOffence listedoffence)
        {       
            db.Entry(listedoffence).State = EntityState.Modified;
            db.SaveChanges();
-           return null;
+           //return null;
+           return listedoffence.Id;
        }
 
     }

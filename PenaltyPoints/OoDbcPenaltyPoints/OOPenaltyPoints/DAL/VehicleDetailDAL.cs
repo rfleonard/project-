@@ -40,12 +40,14 @@ namespace OOPenaltyPoints.DAL
            return null;
        }
 
-
-       public VehicleDetail EditVehicleDetail(VehicleDetail vehicledetail)
+       //cc - changed return to int
+       //public VehicleDetail EditVehicleDetail(VehicleDetail vehicledetail)
+       public int EditVehicleDetail(VehicleDetail vehicledetail)
        {       
            db.Entry(vehicledetail).State = EntityState.Modified;
            db.SaveChanges();
-           return null;
+           return vehicledetail.Id;
+           //return null;
        }
 
     }

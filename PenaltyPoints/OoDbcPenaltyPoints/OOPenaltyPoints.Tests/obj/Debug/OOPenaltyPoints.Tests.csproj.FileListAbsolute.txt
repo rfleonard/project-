@@ -1,0 +1,20 @@
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.Tests.dll.config
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.Tests.dll
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.Tests.pdb
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.dll
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.pdb
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\EntityFramework.xml
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\obj\Debug\OOPenaltyPoints.Tests.dll
+C:\Users\Owner\Documents\GitHub\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\obj\Debug\OOPenaltyPoints.Tests.pdb
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.Tests.dll.config
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.Tests.dll
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.Tests.pdb
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.dll
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\OOPenaltyPoints.pdb
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\bin\Debug\EntityFramework.xml
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\obj\Debug\OOPenaltyPoints.Tests.dll
+C:\Users\Owner\Documents\GitHub\PenaltyPoints _CC_Wed18072012\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\obj\Debug\OOPenaltyPoints.Tests.pdb

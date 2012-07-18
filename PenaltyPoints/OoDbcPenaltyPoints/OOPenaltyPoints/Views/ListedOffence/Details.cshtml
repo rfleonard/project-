@@ -4,45 +4,57 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details Of An Offence Incurring Penalty Points</h2>
 
 <fieldset>
-    <legend>ListedOffence</legend>
+    <legend>Details of the penalty point offence:</legend>
 
-    <div class="display-label">LoName</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LoName)
-    </div>
-
-    <div class="display-label">LoDesc</div>
+    <div class="display-label">Description of the offence:</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.LoDesc)
     </div>
 
-    <div class="display-label">Lo28Days</div>
+    <div class="display-label">Penalty points on payment:</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Lo28Days)
     </div>
 
-    <div class="display-label">Lo56days</div>
+    <div class="display-label">Penalty points on conviction:</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Lo56days)
     </div>
 
-    <div class="display-label">LoCourtPoints</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LoCourtPoints)
-    </div>
-
-    <div class="display-label">LoFine28</div>
+    <div class="display-label">Amount paid in 28 days (€):</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.LoFine28)
     </div>
 
-    <div class="display-label">LoFine56</div>
+    <div class="display-label">Amount paid in next 28 days (€):</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.LoFine56)
     </div>
+
+    <div class="display-label">Mandatory Court Summons Required:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoMandatoryCourtAppearance)
+    </div>
+
+    <div class="display-label">Date Created:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoDateCreated)
+    </div>
+
+    <div class="display-label">Date Last Modified:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoDateLastModified)
+    </div>
+
+    <div class="display-label">Status:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoStatus)
+    </div>
+
+
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |

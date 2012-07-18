@@ -64,13 +64,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\DriverOffenceBLL.cs" />
+    <Compile Include="BLL\ListedOffenceBLL.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DriverOffenceController.cs" />
+    <Compile Include="Controllers\ListedOffenceController.cs" />
     <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\SummonsDetailController.cs" />
     <Compile Include="Controllers\DriverDetailController.cs" />
-    <Compile Include="Controllers\DriverOffenceController.cs" />
+    <Compile Include="Controllers\old_DriverOffenceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ListedOffenceController.cs" />
+    <Compile Include="Controllers\old_ListedOffenceController.cs" />
     <Compile Include="Controllers\VehicleDetailController.cs" />
     <Compile Include="DAL\NotificationDAL.cs" />
     <Compile Include="DAL\SummonsDetailDAL.cs" />
@@ -92,6 +96,8 @@
     </Compile>
     <Compile Include="Models\SummonsDetail.cs" />
     <Compile Include="Models\VehicleDetail.cs" />
+    <Compile Include="Models\ViewModel\GetDriverOffencesUI.cs" />
+    <Compile Include="Models\ViewModel\DriverOffenceUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

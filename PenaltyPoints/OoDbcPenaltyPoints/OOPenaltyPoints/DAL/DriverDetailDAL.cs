@@ -24,11 +24,13 @@ namespace OOPenaltyPoints.DAL
            return(db.DriverDetails.ToList());
         }
 
+       //CC - changed CreateDriverDetail to retrun driverdetail object
        public DriverDetail CreateDriverDetail(DriverDetail driverdetail)
        {
            db.DriverDetails.Add(driverdetail);
            db.SaveChanges();
-           return null;
+           //return null;
+           return driverdetail;
        }
 
        public DriverDetail DeleteDriverDetailById(int id)
@@ -40,12 +42,14 @@ namespace OOPenaltyPoints.DAL
            return null;
        }
 
-
-       public DriverDetail EditDriverDetail(DriverDetail driverdetail)
+       //cc - changed return to int
+       //public DriverDetail EditDriverDetail(DriverDetail driverdetail)
+        public int EditDriverDetail(DriverDetail driverdetail)
        {       
            db.Entry(driverdetail).State = EntityState.Modified;
            db.SaveChanges();
-           return null;
+           //return null;
+           return driverdetail.Id;
        }
 
     }
