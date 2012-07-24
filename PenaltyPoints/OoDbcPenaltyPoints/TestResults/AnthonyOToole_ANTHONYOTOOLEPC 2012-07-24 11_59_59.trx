@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ce81d361-ac8f-4732-8c6a-b18ad1103485" name="AnthonyOToole@ANTHONYOTOOLEPC 2012-07-24 11:59:59" runUser="AnthonyOToolePC\AnthonyOToole" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="b24e28c5-0371-4ffe-909c-1784326ac804">
+    <Deployment runDeploymentRoot="AnthonyOToole_ANTHONYOTOOLEPC 2012-07-24 11_59_59">
+      <DeploymentItem filename="C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints\bin\OOPenaltyPoints.dll" />
+      <DeploymentItem filename="C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-07-24T11:59:59.9740950+01:00" queuing="2012-07-24T12:00:01.1181604+01:00" start="2012-07-24T12:00:01.2031653+01:00" finish="2012-07-24T12:00:04.2873417+01:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CreateListedOffenceTest" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="b35ecf29-50b6-d4c7-687b-ac9c333f8adc">
+      <Execution id="79da2eda-ea80-4c0a-8d62-d2f959e5d2bf" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.ListedOffenceDALTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateListedOffenceTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b35ecf29-50b6-d4c7-687b-ac9c333f8adc" executionId="79da2eda-ea80-4c0a-8d62-d2f959e5d2bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="79da2eda-ea80-4c0a-8d62-d2f959e5d2bf" testId="b35ecf29-50b6-d4c7-687b-ac9c333f8adc" testName="CreateListedOffenceTest" computerName="ANTHONYOTOOLEPC" duration="00:00:01.2603489" startTime="2012-07-24T12:00:01.2441676+01:00" endTime="2012-07-24T12:00:02.7422533+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="79da2eda-ea80-4c0a-8d62-d2f959e5d2bf">
+    </UnitTestResult>
+  </Results>
+</TestRun>

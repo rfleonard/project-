@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@model OOPenaltyPoints.Models.ViewModel.DriverOffenceUI
 
 @{
@@ -19,3 +20,26 @@ committed by @Html.DisplayFor(model => model.FName)
         @Html.ActionLink("Back to List", "Index")
     </p>
 }
+=======
+﻿@model OOPenaltyPoints.Models.ViewModel.DriverOffenceUI
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete A Driver Offence</h2>
+
+<h3>Are you sure you want to delete the driving 
+offence @Html.DisplayFor(model => model.description)<br /> 
+committed by @Html.DisplayFor(model => model.FName) 
+@Html.DisplayFor(model => model.SName) on the 
+@Html.DisplayFor(model => model.offenceDate) at 
+@Html.DisplayFor(model => model.location).</h3>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+>>>>>>> Added Unit Test & soa

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="399fa528-99ae-4ee4-8c9c-606505a71239" name="AnthonyOToole@ANTHONYOTOOLEPC 2012-07-24 12:04:21" runUser="AnthonyOToolePC\AnthonyOToole" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="98e5b329-d158-46bf-bf1a-fa3686cf61ba">
+    <Deployment runDeploymentRoot="AnthonyOToole_ANTHONYOTOOLEPC 2012-07-24 12_04_21">
+      <DeploymentItem filename="C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints\bin\OOPenaltyPoints.dll" />
+      <DeploymentItem filename="C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-07-24T12:04:21.0090253+01:00" queuing="2012-07-24T12:04:21.4890528+01:00" start="2012-07-24T12:04:21.5380556+01:00" finish="2012-07-24T12:04:24.8402445+01:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="3" error="0" failed="1" timeout="0" aborted="0" inconclusive="4" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Index" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="cb561d5c-b525-efa9-b3e7-6d38286095c5">
+      <Execution id="43e78be4-b167-4ce3-a2d6-48a93c121997" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.Controllers.HomeControllerTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="CreateListedOffenceTest" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="b35ecf29-50b6-d4c7-687b-ac9c333f8adc">
+      <Execution id="842a3674-f8fc-4faf-ab0c-1cf16badec43" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.ListedOffenceDALTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CreateListedOffenceTest" />
+    </UnitTest>
+    <UnitTest name="InitialSetup" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="d5c006d0-b4a8-a584-a16b-fa4ef9a91096">
+      <Execution id="35c04340-2237-435a-94a2-2c29dd81c5ea" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.ListedOffenceDALTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="InitialSetup" />
+    </UnitTest>
+    <UnitTest name="DeleteListedOffenceByIdTest" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="871a6ac7-a0c6-e470-e8f0-f30328a6d128">
+      <Execution id="70f630b8-6545-4226-8be6-3aca19919a56" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.ListedOffenceDALTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DeleteListedOffenceByIdTest" />
+    </UnitTest>
+    <UnitTest name="EditListedOffenceTest" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="019cc5fd-dc29-fd08-fb59-ca0335acd376">
+      <Execution id="9d856fdd-8dfd-4ca5-8bc6-d095e316858b" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.ListedOffenceDALTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EditListedOffenceTest" />
+    </UnitTest>
+    <UnitTest name="ListedOffenceFindByIdTest" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="f564cf2b-cc43-ff60-c3f6-dc3b47e4a3ed">
+      <Execution id="67f89111-43bc-4265-ad2f-d596711b652b" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.ListedOffenceDALTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ListedOffenceFindByIdTest" />
+    </UnitTest>
+    <UnitTest name="About" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="7f07ff5e-2773-678c-14b2-b0895e20aeea">
+      <Execution id="96136161-abd6-4953-97a8-a8bb915ca4d0" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.Controllers.HomeControllerTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="ListOfListedOffencesTest" storage="c:\users\anthonyotoole\desktop\semester 3\entityframeworkresearch\4.project versions\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="83f9d785-cfd0-8844-0ff0-64b9293445ff">
+      <Execution id="3411f19a-ba2f-4c98-81bf-793153576ffa" />
+      <TestMethod codeBase="C:/Users/AnthonyOToole/Desktop/Semester 3/EntityFrameworkResearch/4.Project Versions/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.ListedOffenceDALTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ListOfListedOffencesTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="019cc5fd-dc29-fd08-fb59-ca0335acd376" executionId="9d856fdd-8dfd-4ca5-8bc6-d095e316858b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f07ff5e-2773-678c-14b2-b0895e20aeea" executionId="96136161-abd6-4953-97a8-a8bb915ca4d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="83f9d785-cfd0-8844-0ff0-64b9293445ff" executionId="3411f19a-ba2f-4c98-81bf-793153576ffa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="871a6ac7-a0c6-e470-e8f0-f30328a6d128" executionId="70f630b8-6545-4226-8be6-3aca19919a56" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b35ecf29-50b6-d4c7-687b-ac9c333f8adc" executionId="842a3674-f8fc-4faf-ab0c-1cf16badec43" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cb561d5c-b525-efa9-b3e7-6d38286095c5" executionId="43e78be4-b167-4ce3-a2d6-48a93c121997" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5c006d0-b4a8-a584-a16b-fa4ef9a91096" executionId="35c04340-2237-435a-94a2-2c29dd81c5ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f564cf2b-cc43-ff60-c3f6-dc3b47e4a3ed" executionId="67f89111-43bc-4265-ad2f-d596711b652b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9d856fdd-8dfd-4ca5-8bc6-d095e316858b" testId="019cc5fd-dc29-fd08-fb59-ca0335acd376" testName="EditListedOffenceTest" computerName="ANTHONYOTOOLEPC" duration="00:00:01.3124190" startTime="2012-07-24T12:04:21.5520564+01:00" endTime="2012-07-24T12:04:23.1131457+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9d856fdd-8dfd-4ca5-8bc6-d095e316858b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at OOPenaltyPoints.Tests.ListedOffenceDALTest.EditListedOffenceTest() in C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\DAL\ListedOffenceDALTest.cs:line 204
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="96136161-abd6-4953-97a8-a8bb915ca4d0" testId="7f07ff5e-2773-678c-14b2-b0895e20aeea" testName="About" computerName="ANTHONYOTOOLEPC" duration="00:00:00.0009749" startTime="2012-07-24T12:04:23.1161458+01:00" endTime="2012-07-24T12:04:23.1231462+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96136161-abd6-4953-97a8-a8bb915ca4d0">
+    </UnitTestResult>
+    <UnitTestResult executionId="3411f19a-ba2f-4c98-81bf-793153576ffa" testId="83f9d785-cfd0-8844-0ff0-64b9293445ff" testName="ListOfListedOffencesTest" computerName="ANTHONYOTOOLEPC" duration="00:00:00.0260763" startTime="2012-07-24T12:04:23.1241463+01:00" endTime="2012-07-24T12:04:23.1541480+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3411f19a-ba2f-4c98-81bf-793153576ffa">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at OOPenaltyPoints.Tests.ListedOffenceDALTest.ListOfListedOffencesTest() in C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\DAL\ListedOffenceDALTest.cs:line 244
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="70f630b8-6545-4226-8be6-3aca19919a56" testId="871a6ac7-a0c6-e470-e8f0-f30328a6d128" testName="DeleteListedOffenceByIdTest" computerName="ANTHONYOTOOLEPC" duration="00:00:00.0359057" startTime="2012-07-24T12:04:23.1561481+01:00" endTime="2012-07-24T12:04:23.1951504+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="70f630b8-6545-4226-8be6-3aca19919a56">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at OOPenaltyPoints.Tests.ListedOffenceDALTest.DeleteListedOffenceByIdTest() in C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\DAL\ListedOffenceDALTest.cs:line 175
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="842a3674-f8fc-4faf-ab0c-1cf16badec43" testId="b35ecf29-50b6-d4c7-687b-ac9c333f8adc" testName="CreateListedOffenceTest" computerName="ANTHONYOTOOLEPC" duration="00:00:00.0057999" startTime="2012-07-24T12:04:23.1971505+01:00" endTime="2012-07-24T12:04:23.2061510+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="842a3674-f8fc-4faf-ab0c-1cf16badec43">
+    </UnitTestResult>
+    <UnitTestResult executionId="43e78be4-b167-4ce3-a2d6-48a93c121997" testId="cb561d5c-b525-efa9-b3e7-6d38286095c5" testName="Index" computerName="ANTHONYOTOOLEPC" duration="00:00:00.0833967" startTime="2012-07-24T12:04:23.2081511+01:00" endTime="2012-07-24T12:04:23.2941560+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="43e78be4-b167-4ce3-a2d6-48a93c121997">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.AreEqual failed. Expected:&lt;Welcome to ASP.NET MVC!&gt;. Actual:&lt;Motorist Penalty Points Offence System&gt;. </Message>
+          <StackTrace>   at CallSite.Target(Closure , CallSite , Type , String , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid3[T0,T1,T2](CallSite site, T0 arg0, T1 arg1, T2 arg2)
+   at OOPenaltyPoints.Tests.Controllers.HomeControllerTest.Index() in C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\Controllers\HomeControllerTest.cs:line 25
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="35c04340-2237-435a-94a2-2c29dd81c5ea" testId="d5c006d0-b4a8-a584-a16b-fa4ef9a91096" testName="InitialSetup" computerName="ANTHONYOTOOLEPC" duration="00:00:00.0001369" startTime="2012-07-24T12:04:23.2951561+01:00" endTime="2012-07-24T12:04:23.2981563+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35c04340-2237-435a-94a2-2c29dd81c5ea">
+    </UnitTestResult>
+    <UnitTestResult executionId="67f89111-43bc-4265-ad2f-d596711b652b" testId="f564cf2b-cc43-ff60-c3f6-dc3b47e4a3ed" testName="ListedOffenceFindByIdTest" computerName="ANTHONYOTOOLEPC" duration="00:00:00.0048968" startTime="2012-07-24T12:04:23.2991563+01:00" endTime="2012-07-24T12:04:23.3071568+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67f89111-43bc-4265-ad2f-d596711b652b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at OOPenaltyPoints.Tests.ListedOffenceDALTest.ListedOffenceFindByIdTest() in C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\DAL\ListedOffenceDALTest.cs:line 233
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
