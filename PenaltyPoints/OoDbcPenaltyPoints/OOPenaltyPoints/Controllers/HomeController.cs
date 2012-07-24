@@ -32,7 +32,7 @@ namespace OOPenaltyPoints.Controllers
 
 
           }
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
+            ViewBag.Message = "Motorist Penalty Points Offence System";
 
             return View();
         }

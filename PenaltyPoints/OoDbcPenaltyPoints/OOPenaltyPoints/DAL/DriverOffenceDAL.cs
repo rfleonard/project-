@@ -31,6 +31,9 @@ namespace OOPenaltyPoints.DAL
         public int CreateDriverOffence(DriverOffence driveroffence)
         {
             db.DriverOffences.Add(driveroffence);
+            db.Entry(driveroffence.DriverDetail).State = EntityState.Unchanged;
+            db.Entry(driveroffence.VehicleDetails).State = EntityState.Unchanged;
+            db.Entry(driveroffence.ListedOffence).State = EntityState.Unchanged;
             db.SaveChanges();
             return driveroffence.Id;
             //return null;
@@ -50,7 +53,7 @@ namespace OOPenaltyPoints.DAL
         {
             db.Entry(driveroffence).State = EntityState.Modified;
             db.SaveChanges();
-            return null;
+            return driveroffence;
         }
 
 

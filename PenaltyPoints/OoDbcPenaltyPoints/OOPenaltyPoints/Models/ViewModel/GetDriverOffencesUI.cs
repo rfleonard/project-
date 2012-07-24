@@ -34,11 +34,5 @@ namespace OOPenaltyPoints.Models.ViewModel
         //Vechicle properties
         [Required]
         public string Registration {get; set;}
-
-
-
-
-
-        
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using OOPenaltyPoints.DAL;
 using OOPenaltyPoints.Models;
+using System.Web.Mvc;
 
 /// <summary>
 /// TO DO Summary description for ListedOffenceBLL
@@ -61,7 +62,7 @@ namespace OOPenaltyPoints.BLL
             if (_newOffence.LoMandatoryCourtAppearance == true)
             {
                 _newOffence.Lo28Days = 0;
-                _newOffence.Lo56days = 0;
+                //_newOffence.Lo56days = 0;
                 _newOffence.LoFine28 = 0;
                 _newOffence.LoFine56 = 0;
             };
@@ -99,17 +100,16 @@ namespace OOPenaltyPoints.BLL
         public void EditOffence(ListedOffence _offence)
         {
             //offences cannot be updated as they are referenced in the driving offence table.
-            //Instead a offence will be create and assiged the value of the existing offence.
-            //The exiting offence will have its status set to false so it cannot be used 
+            //Instead a new offence will be created and assigned the updated values.
+            //The existing offence status will be set to false so it cannot be used 
             //in new driving offences but can be accessed by existing driving offences.
 
+            //create new offence
             ListedOffence _newOffence = new ListedOffence();
+            //get existing offence from database
+            ListedOffence _updatedOffence = _DAL.ListedOffenceFindById(_offence.Id);
 
-            _offence.LoStatus = false;
-            _offence.LoDateLastModified = System.DateTime.Now;
-            //CC - Issue with date I need to fix
-            _offence.LoDateCreated = System.DateTime.Now;
-
+            //assign new offence updated values of existing offence
             _newOffence.LoDesc = _offence.LoDesc.ToString();
             _newOffence.Lo28Days = _offence.Lo28Days;
             _newOffence.Lo56days = _offence.Lo56days;
@@ -119,10 +119,36 @@ namespace OOPenaltyPoints.BLL
             _newOffence.LoStatus = true;
             _newOffence.LoDateCreated = _offence.LoDateCreated;
             _newOffence.LoDateLastModified = System.DateTime.Now;
-
-            _DAL.EditListedOffence(_offence);
+            //add new offence to database
             _DAL.CreateListedOffence(_newOffence);
+
+            //Update status of existing offence to false 
+            //so it is not accessable to new driver offences
+            //but is available to existing driver offences.
+            _updatedOffence.LoStatus = false;
+            _updatedOffence.LoDateLastModified = System.DateTime.Now;
+            //Update database record of existing offence
+            _DAL.EditListedOffence(_updatedOffence);
         
+        }
+
+        public List<SelectListItem> GetOffenceDescription()
+        {
+            //Define a offence description list
+            List<SelectListItem> doDescription = new List<SelectListItem>();
+            List<ListedOffence> listedOffences = GetOffences();
+
+
+            //bool selectFirst = true;
+            foreach (ListedOffence offence in listedOffences)
+            {
+                    doDescription.Add(new SelectListItem
+                    {
+                        Text = offence.LoDesc,
+                        Value = offence.LoDesc
+                    });
+            }
+            return doDescription;
         }
     } //End ListedOffenceBLL
 }

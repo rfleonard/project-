@@ -21,21 +21,40 @@ namespace OOPenaltyPoints
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+              "Search", // Route name
+              "DriverOffence/Search/{id}", // URL with parameters
+               new { controller = "DriverOffence", action = "Search" } // Parameter defaults
+            );
+
+            routes.MapRoute(
+             "Statistics", // Route name
+             "DriverOffence/Statistics/{id}", // URL with parameters
+              new { controller = "DriverOffence", action = "Statistics" } // Parameter defaults
+           );
+
+            routes.MapRoute(
+             "DailyTasks", // Route name
+             "DriverOffence/DailyTasks/{id}", // URL with parameters
+              new { controller = "DriverOffence", action = "DailyTasks" } // Parameter defaults
+           );
+
+
+            //routes.MapRoute(
+            //     "ListedOffences", // Route name
+            //     "{controller}/{action}/{id}", // URL with parameters
+            //      new { controller = "ListedOffence", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            //);
+
+
+
            routes.MapRoute(
                 "Default", // Route name
                "{controller}/{action}/{id}", // URL with parameters
                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+           );
 
 
-               );
-
-           routes.MapRoute(
-    "ListedOffences", // Route name
-   "{controller}/{action}/{id}", // URL with parameters
-   new { controller = "ListedOffences", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-
-
-   );
 
 
 

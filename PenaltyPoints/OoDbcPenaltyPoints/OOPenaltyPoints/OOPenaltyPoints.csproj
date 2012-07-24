@@ -64,8 +64,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\DriverDetailBLL.cs" />
     <Compile Include="BLL\DriverOffenceBLL.cs" />
     <Compile Include="BLL\ListedOffenceBLL.cs" />
+    <Compile Include="BLL\VehicleDetailBLL.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DriverOffenceController.cs" />
     <Compile Include="Controllers\ListedOffenceController.cs" />
@@ -96,8 +98,16 @@
     </Compile>
     <Compile Include="Models\SummonsDetail.cs" />
     <Compile Include="Models\VehicleDetail.cs" />
+    <Compile Include="Models\ViewModel\DailyTasksUI.cs" />
+    <Compile Include="Models\ViewModel\DriverPointsByCountyUI.cs" />
+    <Compile Include="Models\ViewModel\DriverPointsUI.cs" />
     <Compile Include="Models\ViewModel\GetDriverOffencesUI.cs" />
     <Compile Include="Models\ViewModel\DriverOffenceUI.cs" />
+    <Compile Include="Models\ViewModel\DriverLicenceUI.cs" />
+    <Compile Include="Models\ViewModel\LicenceTypeUI.cs" />
+    <Compile Include="Models\ViewModel\PointsByOffenceTypeUI.cs" />
+    <Compile Include="Models\ViewModel\SearchDriverOffenceUI.cs" />
+    <Compile Include="Models\ViewModel\StatisticsUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -201,7 +211,6 @@
     <Content Include="Views\DriverOffence\AutoGenCreate.cshtml" />
     <Content Include="Views\DriverOffence\Edit.cshtml" />
     <Content Include="Views\DriverOffence\Delete.cshtml" />
-    <Content Include="Views\DriverOffence\Copy of CreateObject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ListedOffence\Index.cshtml" />
@@ -247,6 +256,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Notification\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DriverOffence\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DriverOffence\SearchComplete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DriverOffence\Statistics.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DriverOffence\StatisticsComplete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DriverOffence\DailyTasks.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DriverOffence\DailyTasksComplete.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

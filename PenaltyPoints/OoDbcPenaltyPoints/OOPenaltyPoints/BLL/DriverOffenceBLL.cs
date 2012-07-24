@@ -6,12 +6,12 @@ using OOPenaltyPoints.DAL;
 using OOPenaltyPoints.Models;
 using OOPenaltyPoints.Models.ViewModel;
 
-namespace OOPenaltyPoints.BLL
+namespace OOPenaltyPoints.BLL 
 {
     /// <summary>
     /// TO DO Summary description for DriverOffenceBLL
     /// </summary>
-    public class DriverOffenceBLL
+    public class DriverOffenceBLL 
     {
         private DriverOffenceDAL _driverOffenceDAL = null;
 
@@ -72,6 +72,8 @@ namespace OOPenaltyPoints.BLL
         /// </method>
         public void CreateOffence(DriverOffenceUI driverOffenceUI)
         {
+
+
             // declare a new driver offence object.
             // if driver does not exist declare a new driver.
             // if vehicle does not exists declare a new vehicle.
@@ -99,8 +101,11 @@ namespace OOPenaltyPoints.BLL
             int driverExists = 0;
             foreach (DriverDetail driver in driversDB)
             {
-                if (driver.DdLicenceNo == driverOffenceUI.LicenceNo)         
+                if (driver.DdLicenceNo == driverOffenceUI.LicenceNo)
+                {
                     driverExists = driver.Id;
+                    break;
+                }
             }
 
             //If driver does not exist declare a new driver object
@@ -115,37 +120,8 @@ namespace OOPenaltyPoints.BLL
                 _driverOffenceDB.DriverDetail.DdAddress2 = driverOffenceUI.Address2.ToString();
                 _driverOffenceDB.DriverDetail.DdAddress3 = driverOffenceUI.Address3.ToString();
                 _driverOffenceDB.DriverDetail.DdLicenceStatus = driverOffenceUI.LicenceStatus.ToString();
-                //_driverOffenceDB.DriverDetail = driverDAL.CreateDriverDetail(_driverOffenceDB.DriverDetail);
+                _driverOffenceDB.DriverDetail = driverDAL.CreateDriverDetail(_driverOffenceDB.DriverDetail);
             }
-
-            
-
-            //Check to see if vehicle exists in database
-            VehicleDetailDAL vehicleDAL = new VehicleDetailDAL();
-            List<VehicleDetail> vehiclesDB = vehicleDAL.ListOfVehicleDetails();
-
-            int vehicleExists = 0;
-            foreach (VehicleDetail vehicle in vehiclesDB)
-            {
-                if (vehicle.VdRegistration == driverOffenceUI.Registration)
-                    vehicleExists = vehicle.Id;
-            }
-
-            //If vehicle does not exist declare a new driver object
-            if (vehicleExists == 0)
-            {
-                _driverOffenceDB.VehicleDetails = new VehicleDetail();
-                //update vechile attributes
-                _driverOffenceDB.VehicleDetails.VdRegistration = driverOffenceUI.Registration.ToString();
-                _driverOffenceDB.VehicleDetails.VdMake = driverOffenceUI.Make.ToString();
-                _driverOffenceDB.VehicleDetails.VdType = driverOffenceUI.Type.ToString();
-                _driverOffenceDB.VehicleDetails.VdCubicCapacity = driverOffenceUI.Capacity;
-                //_driverOffenceDB.VehicleDetails = vehicleDAL.CreateVehicleDetail(_driverOffenceDB.VehicleDetails);
-            }
-
-            //Create a new driver offence
-            int driverOffenceID = _DAL.CreateDriverOffence(_driverOffenceDB);
-            _driverOffenceDB = _DAL.DriverOffenceFindById(driverOffenceID);
 
             //if driver existed assign driver details to the new driver offence object;
             if (driverExists > 0)
@@ -159,10 +135,39 @@ namespace OOPenaltyPoints.BLL
                 _driverOffenceDB.DriverDetail.DdAddress2 = driverOffenceUI.Address2.ToString();
                 _driverOffenceDB.DriverDetail.DdAddress3 = driverOffenceUI.Address3.ToString();
                 _driverOffenceDB.DriverDetail.DdLicenceStatus = driverOffenceUI.LicenceStatus.ToString();
-                _driverOffenceDB.DriverDetail = driverDAL.DriverDetailFindById(driverDAL.EditDriverDetail(_driverOffenceDB.DriverDetail));
+                //_driverOffenceDB.DriverDetail = driverDAL.DriverDetailFindById(driverDAL.EditDriverDetail(_driverOffenceDB.DriverDetail));
+                driverDAL.EditDriverDetail(_driverOffenceDB.DriverDetail);
+            } 
+
+            //Check to see if vehicle exists in database
+            VehicleDetailDAL vehicleDAL = new VehicleDetailDAL();
+            List<VehicleDetail> vehiclesDB = vehicleDAL.ListOfVehicleDetails();
+
+            int vehicleExists = 0;
+            foreach (VehicleDetail vehicle in vehiclesDB)
+            {
+                if (vehicle.VdRegistration == driverOffenceUI.Registration)
+                {
+                    vehicleExists = vehicle.Id;
+                    break;
+                }
             }
 
-            //if vehicle existed assign driver details to the driver offence object;
+            //If vehicle does not exist declare a new vehicle object
+            if (vehicleExists == 0)
+            {
+                _driverOffenceDB.VehicleDetails = new VehicleDetail();
+                //update vechile attributes
+                _driverOffenceDB.VehicleDetails.VdRegistration = driverOffenceUI.Registration.ToString();
+                _driverOffenceDB.VehicleDetails.VdMake = driverOffenceUI.Make.ToString();
+                _driverOffenceDB.VehicleDetails.VdType = driverOffenceUI.Type.ToString();
+                _driverOffenceDB.VehicleDetails.VdCubicCapacity = driverOffenceUI.Capacity;
+                _driverOffenceDB.VehicleDetails = vehicleDAL.CreateVehicleDetail(_driverOffenceDB.VehicleDetails);
+            }
+
+
+
+            //if vehicle existed assign vehicle details to the vehicle offence object;
             if (vehicleExists > 0)
             {
                 _driverOffenceDB.VehicleDetails = vehicleDAL.VehicleDetailFindById(vehicleExists);
@@ -171,7 +176,8 @@ namespace OOPenaltyPoints.BLL
                 _driverOffenceDB.VehicleDetails.VdMake = driverOffenceUI.Make.ToString();
                 _driverOffenceDB.VehicleDetails.VdType = driverOffenceUI.Type.ToString();
                 _driverOffenceDB.VehicleDetails.VdCubicCapacity = driverOffenceUI.Capacity;
-                _driverOffenceDB.VehicleDetails = vehicleDAL.VehicleDetailFindById( vehicleDAL.EditVehicleDetail(_driverOffenceDB.VehicleDetails));
+                //_driverOffenceDB.VehicleDetails = vehicleDAL.VehicleDetailFindById( vehicleDAL.EditVehicleDetail(_driverOffenceDB.VehicleDetails));
+                vehicleDAL.EditVehicleDetail(_driverOffenceDB.VehicleDetails);
             }
 
 
@@ -181,15 +187,19 @@ namespace OOPenaltyPoints.BLL
 
             foreach (ListedOffence offence in offencesDB)
             {
-                if (offence.LoDesc == driverOffenceUI.description)
+                if ((offence.LoDesc == driverOffenceUI.description) && (offence.LoStatus))
                 {
-                    _driverOffenceDB.ListedOffence = offenceDAL.ListedOffenceFindById(offence.Id);   
+                    _driverOffenceDB.ListedOffence = offenceDAL.ListedOffenceFindById(offence.Id);
+                    break;
                 }
 
             }
-            
+
+            //Create a new driver offence
+            int driverOffenceID = _DAL.CreateDriverOffence(_driverOffenceDB);
+            //_driverOffenceDB = _DAL.DriverOffenceFindById(driverOffenceID);
             //Update driver offence object in database
-            _DAL.EditDriverOffence(_driverOffenceDB);
+            //_DAL.EditDriverOffence(_driverOffenceDB);
         }
 
 
@@ -235,108 +245,45 @@ namespace OOPenaltyPoints.BLL
         // POST: /ListedOffence/Edit/5
         public void EditDriverOffence(DriverOffenceUI driverOffenceUI)
         {
-             DriverOffence _driverOffenceDB = new DriverOffence();
+            DriverOffence _driverOffenceDB = _DAL.DriverOffenceFindById(driverOffenceUI.id);
 
-             _driverOffenceDB.Id = driverOffenceUI.id;
+            //Update offence details
              _driverOffenceDB.doStatus = driverOffenceUI.status.ToString();
              _driverOffenceDB.doLocation = driverOffenceUI.location.ToString();
              _driverOffenceDB.doGardaId = driverOffenceUI.gardaId.ToString();
              _driverOffenceDB.doOffenceDate = driverOffenceUI.offenceDate;
 
 
-             //Check to see if driver exists in database            
+             //Update driver details            
              DriverDetailDAL driverDAL = new DriverDetailDAL();
-             List<DriverDetail> driversDB = driverDAL.ListOfDriverDetails();
-
-             int driverExists = 0;
-             foreach (DriverDetail driver in driversDB)
-             {
-                 if (driver.DdLicenceNo == driverOffenceUI.LicenceNo)
-                     driverExists = driver.Id;
-             }
-
-             //If driver does not exist declare a new driver object
-             if (driverExists == 0)
-             {
-                 _driverOffenceDB.DriverDetail = new DriverDetail();
-                 //update driver attributes
-                 _driverOffenceDB.DriverDetail.DdLicenceNo = driverOffenceUI.LicenceNo.ToString();
-                 _driverOffenceDB.DriverDetail.DdFName = driverOffenceUI.FName.ToString();
-                 _driverOffenceDB.DriverDetail.DdSName = driverOffenceUI.SName.ToString();
-                 _driverOffenceDB.DriverDetail.DdAddress1 = driverOffenceUI.Address1.ToString();
-                 _driverOffenceDB.DriverDetail.DdAddress2 = driverOffenceUI.Address2.ToString();
-                 _driverOffenceDB.DriverDetail.DdAddress3 = driverOffenceUI.Address3.ToString();
-                 _driverOffenceDB.DriverDetail.DdLicenceStatus = driverOffenceUI.LicenceStatus.ToString();
-                 _driverOffenceDB.DriverDetail = driverDAL.CreateDriverDetail(_driverOffenceDB.DriverDetail);
-             }
-             //if driver existed assign driver details to the new driver offence object;
-             if (driverExists > 0)
-             {
-                 _driverOffenceDB.DriverDetail = driverDAL.DriverDetailFindById(driverExists);
-                 //update driver attributes
-                 _driverOffenceDB.DriverDetail.DdLicenceNo = driverOffenceUI.LicenceNo.ToString();
-                 _driverOffenceDB.DriverDetail.DdFName = driverOffenceUI.FName.ToString();
-                 _driverOffenceDB.DriverDetail.DdSName = driverOffenceUI.SName.ToString();
-                 _driverOffenceDB.DriverDetail.DdAddress1 = driverOffenceUI.Address1.ToString();
-                 _driverOffenceDB.DriverDetail.DdAddress2 = driverOffenceUI.Address2.ToString();
-                 _driverOffenceDB.DriverDetail.DdAddress3 = driverOffenceUI.Address3.ToString();
-                 _driverOffenceDB.DriverDetail.DdLicenceStatus = driverOffenceUI.LicenceStatus.ToString();
-                 _driverOffenceDB.DriverDetail = driverDAL.DriverDetailFindById(driverDAL.EditDriverDetail(_driverOffenceDB.DriverDetail));
-             }
-
-
-
-             //Check to see if vehicle exists in database
+             DriverDetail driver = driverDAL.DriverDetailFindById(_driverOffenceDB.DriverDetail.Id);
+                        
+             _driverOffenceDB.DriverDetail.DdLicenceNo = driverOffenceUI.LicenceNo.ToString();
+             _driverOffenceDB.DriverDetail.DdFName = driverOffenceUI.FName.ToString();
+             _driverOffenceDB.DriverDetail.DdSName = driverOffenceUI.SName.ToString();
+             _driverOffenceDB.DriverDetail.DdAddress1 = driverOffenceUI.Address1.ToString();
+             _driverOffenceDB.DriverDetail.DdAddress2 = driverOffenceUI.Address2.ToString();
+             _driverOffenceDB.DriverDetail.DdAddress3 = driverOffenceUI.Address3.ToString();
+             _driverOffenceDB.DriverDetail.DdLicenceStatus = driverOffenceUI.LicenceStatus.ToString();
+            //store updated driver details in database
+            driverDAL.EditDriverDetail(_driverOffenceDB.DriverDetail);
+            
+            //update vehicle details
              VehicleDetailDAL vehicleDAL = new VehicleDetailDAL();
-             List<VehicleDetail> vehiclesDB = vehicleDAL.ListOfVehicleDetails();
+             VehicleDetail vehicle = vehicleDAL.DeleteVehicleDetailById(_driverOffenceDB.VehicleDetails.Id);
 
-             int vehicleExists = 0;
-             foreach (VehicleDetail vehicle in vehiclesDB)
-             {
-                 if (vehicle.VdRegistration == driverOffenceUI.Registration)
-                     vehicleExists = vehicle.Id;
-             }
-
-             //If vehicle does not exist declare a new driver object
-             if (vehicleExists == 0)
-             {
-                 _driverOffenceDB.VehicleDetails = new VehicleDetail();
-                 //update vechile attributes
-                 _driverOffenceDB.VehicleDetails.VdRegistration = driverOffenceUI.Registration.ToString();
-                 _driverOffenceDB.VehicleDetails.VdMake = driverOffenceUI.Make.ToString();
-                 _driverOffenceDB.VehicleDetails.VdType = driverOffenceUI.Type.ToString();
-                 _driverOffenceDB.VehicleDetails.VdCubicCapacity = driverOffenceUI.Capacity;
-                 _driverOffenceDB.VehicleDetails = vehicleDAL.CreateVehicleDetail(_driverOffenceDB.VehicleDetails);
-             }
-
-             //if vehicle existed assign driver details to the driver offence object;
-             if (vehicleExists > 0)
-             {
-                 _driverOffenceDB.VehicleDetails = vehicleDAL.VehicleDetailFindById(vehicleExists);
-                 //update vechile attributes
-                 _driverOffenceDB.VehicleDetails.VdRegistration = driverOffenceUI.Registration.ToString();
-                 _driverOffenceDB.VehicleDetails.VdMake = driverOffenceUI.Make.ToString();
-                 _driverOffenceDB.VehicleDetails.VdType = driverOffenceUI.Type.ToString();
-                 _driverOffenceDB.VehicleDetails.VdCubicCapacity = driverOffenceUI.Capacity;
-                 _driverOffenceDB.VehicleDetails = vehicleDAL.VehicleDetailFindById(vehicleDAL.EditVehicleDetail(_driverOffenceDB.VehicleDetails));
-             }
-
-
-             //assign offence details to the new driver offence object
-             ListedOffenceDAL offenceDAL = new ListedOffenceDAL();
-             List<ListedOffence> offencesDB = offenceDAL.ListOfListedOffences();
-
-             foreach (ListedOffence offence in offencesDB)
-             {
-                 if (offence.LoDesc == driverOffenceUI.description)
-                     _driverOffenceDB.ListedOffence = offenceDAL.ListedOffenceFindById(offence.Id);
-             }
+            _driverOffenceDB.VehicleDetails.VdRegistration = driverOffenceUI.Registration.ToString();
+            _driverOffenceDB.VehicleDetails.VdMake = driverOffenceUI.Make.ToString();
+            _driverOffenceDB.VehicleDetails.VdType = driverOffenceUI.Type.ToString();
+            _driverOffenceDB.VehicleDetails.VdCubicCapacity = driverOffenceUI.Capacity;
+            vehicleDAL.EditVehicleDetail(_driverOffenceDB.VehicleDetails);
+             
 
             _DAL.EditDriverOffence(_driverOffenceDB);
         }
 
         /// <method>
-        /// SetOffenceStatus() sets status of offence to false
+        /// SetDriverOffenceDeleteStatus() sets status of driver to false
         /// So it cannot be used for new offences.
         /// </method>
         public void SetDriverOffenceDeleteStatus(int id)
@@ -352,6 +299,792 @@ namespace OOPenaltyPoints.BLL
             _DAL.EditDriverOffence(_driverOffence);
         }
 
+        /// <method>
+        /// SetDriverDisqualifyStatus() sets status of drivers licence to disqualified
+        /// </method>
+        public void SetDriverDisqualifyStatus(int id)
+        {
+            //offences cannot be deleted from the database
+            //as they are referenced in the drivingoffence table.
+            //Instead an offence will have its status=false
+            //so it cannot be used in new driving offences.
+            //This ensures integrity within existing driving offences. 
+            DriverDetailDAL driverDAL = new DriverDetailDAL();
+            DriverDetail _driver = driverDAL.DriverDetailFindById(id);
 
+            _driver.DdLicenceStatus= "Disqualified";
+            driverDAL.EditDriverDetail(_driver);
+        }
+
+        /// <method>
+        /// SearchByDriver() returns all driving offences
+        /// belonging to the specified driver id.
+        /// </method>
+        public List<GetDriverOffenceUI> SearchByDriver(string licenceNo)
+        {
+            List<DriverOffence> driverOffencesDB = _DAL.ListOfDriverOffences();
+            List<GetDriverOffenceUI> driverOffencesUI = new List<GetDriverOffenceUI>();
+            GetDriverOffenceUI _offenceUI = new GetDriverOffenceUI();
+
+            //loop through all driving offences.
+            //if driving offence matches driver licence
+            //search criteria then store the driving offence.
+            foreach (DriverOffence driverOffence in driverOffencesDB)
+            {
+                if (driverOffence.DriverDetail.DdLicenceNo == licenceNo)
+                {
+                    //driver offence info.
+                    _offenceUI.id = driverOffence.Id;
+                    _offenceUI.status = driverOffence.doStatus.ToString();
+                    _offenceUI.location = driverOffence.doLocation.ToString();
+                    _offenceUI.offenceDate = driverOffence.doOffenceDate;
+
+                    //offence details
+                    _offenceUI.description = driverOffence.ListedOffence.LoDesc.ToString();
+
+                    //driver details info.
+                    _offenceUI.LicenceNo = driverOffence.DriverDetail.DdLicenceNo.ToString();
+                    _offenceUI.FName = driverOffence.DriverDetail.DdFName.ToString();
+                    _offenceUI.SName = driverOffence.DriverDetail.DdSName.ToString();
+                    _offenceUI.LicenceStatus = driverOffence.DriverDetail.DdLicenceStatus.ToString();
+
+                    //vehicle details
+                    _offenceUI.Registration = driverOffence.VehicleDetails.VdRegistration.ToString();
+
+                    driverOffencesUI.Add(_offenceUI);
+                }
+            }
+
+            return driverOffencesUI;
+        }
+
+        /// <method>
+        /// SearchByRegistration() returns all driving offences
+        /// belonging to a specific vehicle registration.
+        /// </method>
+        public List<GetDriverOffenceUI> SearchByRegistration(string registration)
+        {
+            List<DriverOffence> driverOffencesDB = _DAL.ListOfDriverOffences();
+            List<GetDriverOffenceUI> driverOffencesUI = new List<GetDriverOffenceUI>();
+            GetDriverOffenceUI _offenceUI = new GetDriverOffenceUI();
+
+            //loop through all driving offences.
+            //if driving offence matches vehicle registration
+            //search criteria then store the driving offence.
+            foreach (DriverOffence driverOffence in driverOffencesDB)
+            {
+                if (driverOffence.VehicleDetails.VdRegistration == registration)
+                {
+                    //driver offence info.
+                    _offenceUI.id = driverOffence.Id;
+                    _offenceUI.status = driverOffence.doStatus.ToString();
+                    _offenceUI.location = driverOffence.doLocation.ToString();
+                    _offenceUI.offenceDate = driverOffence.doOffenceDate;
+
+                    //offence details
+                    _offenceUI.description = driverOffence.ListedOffence.LoDesc.ToString();
+
+                    //driver details info.
+                    _offenceUI.LicenceNo = driverOffence.DriverDetail.DdLicenceNo.ToString();
+                    _offenceUI.FName = driverOffence.DriverDetail.DdFName.ToString();
+                    _offenceUI.SName = driverOffence.DriverDetail.DdSName.ToString();
+                    _offenceUI.LicenceStatus = driverOffence.DriverDetail.DdLicenceStatus.ToString();
+
+                    //vehicle details
+                    _offenceUI.Registration = driverOffence.VehicleDetails.VdRegistration.ToString();
+
+                    driverOffencesUI.Add(_offenceUI);
+                }
+            }
+
+            return driverOffencesUI;
+        }
+        /// <method>
+        /// SearchByOffenceType() returns all driving offences
+        /// belonging to a specific offence type.
+        /// </method>
+        public List<GetDriverOffenceUI> SearchByOffenceType(string description)
+        {
+            List<DriverOffence> driverOffencesDB = _DAL.ListOfDriverOffences();
+            List<GetDriverOffenceUI> driverOffencesUI = new List<GetDriverOffenceUI>();
+            GetDriverOffenceUI _offenceUI = new GetDriverOffenceUI();
+
+            //loop through all driving offences.
+            //if driving offence matches offence type
+            //search criteria then store the driving offence.
+            foreach (DriverOffence driverOffence in driverOffencesDB)
+            {
+                if (driverOffence.ListedOffence.LoDesc == description)
+                {
+                    //driver offence info.
+                    _offenceUI.id = driverOffence.Id;
+                    _offenceUI.status = driverOffence.doStatus.ToString();
+                    _offenceUI.location = driverOffence.doLocation.ToString();
+                    _offenceUI.offenceDate = driverOffence.doOffenceDate;
+
+                    //offence details
+                    _offenceUI.description = driverOffence.ListedOffence.LoDesc.ToString();
+
+                    //driver details info.
+                    _offenceUI.LicenceNo = driverOffence.DriverDetail.DdLicenceNo.ToString();
+                    _offenceUI.FName = driverOffence.DriverDetail.DdFName.ToString();
+                    _offenceUI.SName = driverOffence.DriverDetail.DdSName.ToString();
+                    _offenceUI.LicenceStatus = driverOffence.DriverDetail.DdLicenceStatus.ToString();
+
+                    //vehicle details
+                    _offenceUI.Registration = driverOffence.VehicleDetails.VdRegistration.ToString();
+
+                    driverOffencesUI.Add(_offenceUI);
+                }
+            }
+
+            return driverOffencesUI;
+        }
+
+
+        /// <method>
+        /// SearchByDVO() returns all driving offences
+        /// belonging to the specified search criteria
+        /// of driver, vehicle and offence type.
+        /// </method>
+        public List<GetDriverOffenceUI> SearchByDVO(string licenceNo, string registration, string description)
+        {
+            List<DriverOffence> driverOffencesDB = _DAL.ListOfDriverOffences();
+            List<GetDriverOffenceUI> driverOffencesUI = new List<GetDriverOffenceUI>();
+            GetDriverOffenceUI _offenceUI = new GetDriverOffenceUI();
+
+            //loop through all driving offences.
+            //if driving offence matches driver licence, vehicle registration and
+            //offence type search criteria then store the driving offence.
+            foreach (DriverOffence driverOffence in driverOffencesDB)
+            {
+                if (driverOffence.DriverDetail.DdLicenceNo == licenceNo && 
+                    driverOffence.VehicleDetails.VdRegistration == registration &&
+                    driverOffence.ListedOffence.LoDesc == description )
+                {
+                    //driver offence info.
+                    _offenceUI.id = driverOffence.Id;
+                    _offenceUI.status = driverOffence.doStatus.ToString();
+                    _offenceUI.location = driverOffence.doLocation.ToString();
+                    _offenceUI.offenceDate = driverOffence.doOffenceDate;
+
+                    //offence details
+                    _offenceUI.description = driverOffence.ListedOffence.LoDesc.ToString();
+
+                    //driver details info.
+                    _offenceUI.LicenceNo = driverOffence.DriverDetail.DdLicenceNo.ToString();
+                    _offenceUI.FName = driverOffence.DriverDetail.DdFName.ToString();
+                    _offenceUI.SName = driverOffence.DriverDetail.DdSName.ToString();
+                    _offenceUI.LicenceStatus = driverOffence.DriverDetail.DdLicenceStatus.ToString();
+
+                    //vehicle details
+                    _offenceUI.Registration = driverOffence.VehicleDetails.VdRegistration.ToString();
+
+                    driverOffencesUI.Add(_offenceUI);
+                }
+            }
+
+            return driverOffencesUI;
+        }
+
+        /// <method>
+        /// SearchByOffenceType() returns all driving offences
+        /// belonging to a specified search criteria of 
+        /// driver and vehicle.
+        /// </method>
+        public List<GetDriverOffenceUI> SearchByDV(string licenceNo, string registration)
+        {
+            List<DriverOffence> driverOffencesDB = _DAL.ListOfDriverOffences();
+            List<GetDriverOffenceUI> driverOffencesUI = new List<GetDriverOffenceUI>();
+            GetDriverOffenceUI _offenceUI = new GetDriverOffenceUI();
+
+            //loop through all driving offences.
+            //if driving offence matches driver licence and vehicle registration 
+            //search criteria then store the driving offence.
+            foreach (DriverOffence driverOffence in driverOffencesDB)
+            {
+                if (driverOffence.DriverDetail.DdLicenceNo == licenceNo && 
+                    driverOffence.VehicleDetails.VdRegistration == registration)
+                {
+                    //driver offence info.
+                    _offenceUI.id = driverOffence.Id;
+                    _offenceUI.status = driverOffence.doStatus.ToString();
+                    _offenceUI.location = driverOffence.doLocation.ToString();
+                    _offenceUI.offenceDate = driverOffence.doOffenceDate;
+
+                    //offence details
+                    _offenceUI.description = driverOffence.ListedOffence.LoDesc.ToString();
+
+                    //driver details info.
+                    _offenceUI.LicenceNo = driverOffence.DriverDetail.DdLicenceNo.ToString();
+                    _offenceUI.FName = driverOffence.DriverDetail.DdFName.ToString();
+                    _offenceUI.SName = driverOffence.DriverDetail.DdSName.ToString();
+                    _offenceUI.LicenceStatus = driverOffence.DriverDetail.DdLicenceStatus.ToString();
+
+                    //vehicle details
+                    _offenceUI.Registration = driverOffence.VehicleDetails.VdRegistration.ToString();
+
+                    driverOffencesUI.Add(_offenceUI);
+                }
+            }
+
+            return driverOffencesUI;
+        }
+
+        /// <method>
+        /// SearchByDO() returns all driving offences
+        /// belonging to a specified search criteria of
+        /// driver and offence type
+        /// </method>
+        public List<GetDriverOffenceUI> SearchByDO(string licenceNo, string description)
+        {
+            List<DriverOffence> driverOffencesDB = _DAL.ListOfDriverOffences();
+            List<GetDriverOffenceUI> driverOffencesUI = new List<GetDriverOffenceUI>();
+            GetDriverOffenceUI _offenceUI = new GetDriverOffenceUI();
+
+            //loop through all driving offences.
+            //if driving offence matches driver licence, and offence type
+            //search criteria then store the driving offence.
+            foreach (DriverOffence driverOffence in driverOffencesDB)
+            {
+                if (driverOffence.DriverDetail.DdLicenceNo == licenceNo &&
+                    driverOffence.ListedOffence.LoDesc == description)
+                {
+                    //driver offence info.
+                    _offenceUI.id = driverOffence.Id;
+                    _offenceUI.status = driverOffence.doStatus.ToString();
+                    _offenceUI.location = driverOffence.doLocation.ToString();
+                    _offenceUI.offenceDate = driverOffence.doOffenceDate;
+
+                    //offence details
+                    _offenceUI.description = driverOffence.ListedOffence.LoDesc.ToString();
+
+                    //driver details info.
+                    _offenceUI.LicenceNo = driverOffence.DriverDetail.DdLicenceNo.ToString();
+                    _offenceUI.FName = driverOffence.DriverDetail.DdFName.ToString();
+                    _offenceUI.SName = driverOffence.DriverDetail.DdSName.ToString();
+                    _offenceUI.LicenceStatus = driverOffence.DriverDetail.DdLicenceStatus.ToString();
+
+                    //vehicle details
+                    _offenceUI.Registration = driverOffence.VehicleDetails.VdRegistration.ToString();
+
+                    driverOffencesUI.Add(_offenceUI);
+                }
+            }
+
+            return driverOffencesUI;
+        }
+
+        /// <method>
+        /// SearchByOffenceType() returns all driving offences
+        /// belonging to a specified search criteria of 
+        /// vehicle and offence type.
+        /// </method>
+        public List<GetDriverOffenceUI> SearchByVO(string registration, string description)
+        {
+            List<DriverOffence> driverOffencesDB = _DAL.ListOfDriverOffences();
+            List<GetDriverOffenceUI> driverOffencesUI = new List<GetDriverOffenceUI>();
+            GetDriverOffenceUI _offenceUI = new GetDriverOffenceUI();
+
+            //loop through all driving offences.
+            //if driving offence matches vehicle and offence type
+            //search criteria then store the driving offence.
+            foreach (DriverOffence driverOffence in driverOffencesDB)
+            {
+                if (driverOffence.VehicleDetails.VdRegistration == registration &&
+                    driverOffence.ListedOffence.LoDesc == description)
+                {
+                    //driver offence info.
+                    _offenceUI.id = driverOffence.Id;
+                    _offenceUI.status = driverOffence.doStatus.ToString();
+                    _offenceUI.location = driverOffence.doLocation.ToString();
+                    _offenceUI.offenceDate = driverOffence.doOffenceDate;
+
+                    //offence details
+                    _offenceUI.description = driverOffence.ListedOffence.LoDesc.ToString();
+
+                    //driver details info.
+                    _offenceUI.LicenceNo = driverOffence.DriverDetail.DdLicenceNo.ToString();
+                    _offenceUI.FName = driverOffence.DriverDetail.DdFName.ToString();
+                    _offenceUI.SName = driverOffence.DriverDetail.DdSName.ToString();
+                    _offenceUI.LicenceStatus = driverOffence.DriverDetail.DdLicenceStatus.ToString();
+
+                    //vehicle details
+                    _offenceUI.Registration = driverOffence.VehicleDetails.VdRegistration.ToString();
+
+                    driverOffencesUI.Add(_offenceUI);
+                }
+            }
+
+            return driverOffencesUI;
+        }
+
+        /// <method>
+        /// StatisticsOffence() returns 'Penalty Points by Offence Type' statistics.
+        /// </method>
+        public string StatisticsOffence()
+        {
+            List<DriverOffence> _driverOffenceDB = _DAL.ListOfDriverOffences();
+            List<PointsByOffenceTypeUI> pointsByOffenceType = new List<PointsByOffenceTypeUI>();
+            PointsByOffenceTypeUI newPointsByOffenceType = new PointsByOffenceTypeUI();
+            List<string> listedOffences = new List<string>();
+
+            //get the offence types that are being used.
+            bool offenceExists = false;
+            foreach (DriverOffence driverOffence in _driverOffenceDB)
+            {
+                foreach (string offenceType in listedOffences)
+                {
+                    if (offenceType == driverOffence.ListedOffence.LoDesc)
+                    {
+                        offenceExists = true;
+                        break;
+                    }
+                }
+                if (offenceExists == false)
+                    listedOffences.Add(driverOffence.ListedOffence.LoDesc.ToString());
+                if (offenceExists == true)
+                    offenceExists = false;
+            }
+
+            //loop through each listed offence type.
+            //For each offence type find the corresponding driving offences.
+            //Add to the offence type totals
+            foreach (string offence in listedOffences)
+            {
+                newPointsByOffenceType.name = ""; //set for next offence type
+                newPointsByOffenceType.totalDrivers = 0; //set for next offence type
+                newPointsByOffenceType.totalPoints = 0; //set for next offence type
+
+                //loop through driver offence to find drivers of this driving offence type
+                //Tally up driver numbers and penalty point totals
+                //Store this information
+                //return results
+                foreach (DriverOffence driverOffence in _driverOffenceDB)
+                {
+                    if (driverOffence.ListedOffence.LoDesc == offence)
+                    {
+                        newPointsByOffenceType.totalDrivers = newPointsByOffenceType.totalDrivers + 1;
+                        newPointsByOffenceType.name = offence;
+                        if (driverOffence.doStatus == "New Offence")
+                            //penalty points not applied yet.
+                            newPointsByOffenceType.totalPoints = newPointsByOffenceType.totalPoints + 0;
+                        else if ((driverOffence.doStatus == "Penalty Notification") ||
+                            (driverOffence.doStatus == "Penalty 28 Days Notification") ||
+                            (driverOffence.doStatus == "Court Summons"))
+                            //apply penalty points on conviction
+                            newPointsByOffenceType.totalPoints = newPointsByOffenceType.totalPoints + driverOffence.ListedOffence.Lo56days;
+                        else if (driverOffence.doStatus == "Fine Paid")
+                            //apply penalty points on payment
+                            newPointsByOffenceType.totalPoints = newPointsByOffenceType.totalPoints + driverOffence.ListedOffence.Lo28Days;
+                    } //end if offenceType
+                }//end foreach driver offence
+
+                pointsByOffenceType.Add(newPointsByOffenceType);             
+            }
+
+            //loop through offence types and build message
+            string message = "";
+            foreach (PointsByOffenceTypeUI offence in pointsByOffenceType)
+            {
+                message = message + "The offence type '" + offence.name +
+                    "' was committed by " + offence.totalDrivers +
+                    " drivers who have accumulated " +
+                    offence.totalPoints + " penalty points in total. ";
+            }
+            return message;
+            
+        }
+
+         /// <method>
+        /// StatisticsDriver() returns 'Penalty Points Incurred Per Driver Per County' statistics.
+        /// </method>
+        public string StatisticsDriver()
+        {
+            //Get list of drivers
+            //Get list of driving offences.
+            //For each driver store total penalty points and county of residence.
+            //For each county store total drivers per penalty points
+            //Return results.
+            DriverDetailDAL driverDAL = new DriverDetailDAL();
+            List<DriverDetail> allDrivers = driverDAL.ListOfDriverDetails();
+            List<DriverOffence> _drivingOffenceDB = _DAL.ListOfDriverOffences();
+            DriverPointsUI newDriver = new DriverPointsUI();
+            List<DriverPointsUI> _uniqueDrivers = new List<DriverPointsUI>();
+            List<string> countyNames = new List<string>();
+            List<DriverPointsByCountyUI> _totalPointsByCounty = new List<DriverPointsByCountyUI>();
+            DriverPointsByCountyUI pointsByCounty = new DriverPointsByCountyUI();
+
+            bool driverExists = false;
+            foreach (DriverDetail driver in allDrivers)
+            {
+               foreach (DriverOffence offence in _drivingOffenceDB) //  for each file
+                {
+                    if (offence.DriverDetail.DdLicenceNo == driver.DdLicenceNo)
+                    {
+                        //This is another driving offence belonging to this driver.
+                        //Store the drivers county of residence.
+                        //Store the drivers licence Number.
+                        //Check penalty points belonging to offence
+                        //Add the penalty points to the drivers total
+                        //Store the driver information
+                        newDriver.County = offence.DriverDetail.DdAddress3.ToString();
+                        if (offence.doStatus == "New Offence")
+                            //penalty points not applied yet.
+                            newDriver.AccumulatedPoints = newDriver.AccumulatedPoints + 0;
+                        else if ((offence.doStatus == "Penalty Notification") ||
+                            (offence.doStatus == "Penalty 28 Days Notification") ||
+                            (offence.doStatus == "Court Summons"))
+                        {
+                            //apply penalty points on conviction
+                            newDriver.AccumulatedPoints = newDriver.AccumulatedPoints + offence.ListedOffence.Lo56days;
+                            driverExists = true;
+                        }
+                        else if (offence.doStatus == "Fine Paid")
+                        {
+                            //apply penalty points on payment
+                            newDriver.AccumulatedPoints = newDriver.AccumulatedPoints + offence.ListedOffence.Lo28Days;
+                            driverExists = true;
+                        }
+                        
+                    }//end if
+                }//end for _drivingOffenceDB
+
+               if (driverExists == true)
+               {
+                   //store driver information
+                   _uniqueDrivers.Add(newDriver);
+                   //Reset for next driver
+                   driverExists = false;
+                   newDriver.County ="";
+                   newDriver.AccumulatedPoints = 0;
+               }
+            } //end foreach allDrivers
+
+            //Create a list of countys with offenders.
+            bool countyExists = false;
+            foreach (DriverPointsUI driver in _uniqueDrivers)
+            {
+                foreach (string county in countyNames)
+                {
+                    if (driver.County == county)
+                    {
+                        countyExists = true;
+                        break;
+                    }
+                }
+                if (countyExists == false)
+                    countyNames.Add(driver.County.ToString());
+                else if (countyExists == true)
+                    countyExists = false;
+
+            }
+            //calculate penalty points per driver per county.
+            int driverPoints = 0;
+            foreach (string county in countyNames)
+            {
+                pointsByCounty.name = county;
+                foreach (DriverPointsUI driver in _uniqueDrivers)
+                {
+                    if (driver.County == county)
+                    {
+                        //Driver resides in this county
+                        //Add driver to driver total
+                        //Add the driver to penalty point total.
+                        pointsByCounty.TotalDrivers = pointsByCounty.TotalDrivers + 1;
+                        if (driver.AccumulatedPoints > 12)
+                            driverPoints = 12;
+                        else
+                            driverPoints = driver.AccumulatedPoints;
+
+                        switch (driverPoints)
+                        {
+                            case 1:
+                                pointsByCounty.TotalP1 = pointsByCounty.TotalP1 + 1;
+                                break;
+                            case 2:
+                                pointsByCounty.TotalP2 = pointsByCounty.TotalP2 + 1;
+                                break;
+                            case 3:
+                                pointsByCounty.TotalP3 = pointsByCounty.TotalP3 + 1;
+                                break;
+                            case 4:
+                                pointsByCounty.TotalP4 = pointsByCounty.TotalP4 + 1;
+                                break;
+                            case 5:
+                                pointsByCounty.TotalP5 = pointsByCounty.TotalP5 + 1;
+                                break;
+                            case 6:
+                                pointsByCounty.TotalP6 = pointsByCounty.TotalP6 + 1;
+                                break;
+                            case 7:
+                                pointsByCounty.TotalP7 = pointsByCounty.TotalP7 + 1;
+                                break;
+                            case 8:
+                                pointsByCounty.TotalP8 = pointsByCounty.TotalP8 + 1;
+                                break;
+                            case 9:
+                                pointsByCounty.TotalP8 = pointsByCounty.TotalP9 + 1;
+                                break;
+                            case 10:
+                                pointsByCounty.TotalP10 = pointsByCounty.TotalP10 + 1;
+                                break;
+                            case 11:
+                                pointsByCounty.TotalP11 = pointsByCounty.TotalP11 + 1;
+                                break;
+                            case 12:
+                                pointsByCounty.TotalP12 = pointsByCounty.TotalP12 + 1;
+                                break;
+                            default:
+                                break;
+                        }//end switch
+                        driverPoints = 0;  //reset for next driver
+                    } //end if
+                }// end for _uniqueDrivers
+                                
+                _totalPointsByCounty.Add(pointsByCounty);//store county points by driver
+                pointsByCounty.name = "";
+                pointsByCounty.TotalDrivers = 0;
+                pointsByCounty.TotalP1 = 0;
+                pointsByCounty.TotalP2 = 0;
+                pointsByCounty.TotalP3 = 0;
+                pointsByCounty.TotalP4 = 0;
+                pointsByCounty.TotalP5 = 0;
+                pointsByCounty.TotalP6 = 0;
+                pointsByCounty.TotalP7 = 0;
+                pointsByCounty.TotalP8 = 0;
+                pointsByCounty.TotalP9 = 0;
+                pointsByCounty.TotalP10 = 0;
+                pointsByCounty.TotalP11 = 0;
+                pointsByCounty.TotalP12 = 0;
+            }
+
+           
+            //loop through county and build message
+            string message = "";
+            foreach (DriverPointsByCountyUI county in _totalPointsByCounty)
+            {
+                message = message + "County " + county.name + ": " +
+                    county.TotalP1 + " drivers with 1 penalty point. " + 
+                    county.TotalP2 + " drivers with 2 penalty point. " + 
+                    county.TotalP3 + " drivers with 3 penalty point. " + 
+                    county.TotalP4 + " drivers with 4 penalty point. " + 
+                    county.TotalP5 + " drivers with 5 penalty point. " + 
+                    county.TotalP6 + " drivers with 6 penalty point. " + 
+                    county.TotalP7 + " drivers with 7 penalty point. " + 
+                    county.TotalP8 + " drivers with 8 penalty point. " + 
+                    county.TotalP9 + " drivers with 9 penalty point. " + 
+                    county.TotalP10 + " drivers with 10 penalty point. " + 
+                    county.TotalP11 + " drivers with 11 penalty point. " + 
+                    county.TotalP12 + " drivers with 12 or more penalty point. " +
+                    county.TotalDrivers + " drivers in total accumulated penalty points. ";
+            }
+            return message;
+        }
+
+         /// <method>
+        /// StatisticsLicence()  returns 'Number of Drivers by Licence Type' statistics.
+        /// </method>
+        public string StatisticsLicence()
+        {
+            //Get driving offences.
+            //for each unique driver store licence type.
+            //Calculate total of each licence type.
+            //return results.
+            List<DriverOffence> _drivingOffenceDB = _DAL.ListOfDriverOffences();
+            List<DriverLicenceUI> _uniqueDrivers = new List<DriverLicenceUI>();
+            DriverLicenceUI licence = new DriverLicenceUI();
+            LicenceTypeUI licenceTypeStats = new LicenceTypeUI();
+
+            bool driverExists = false;
+            foreach (DriverOffence offence in _drivingOffenceDB)
+            {
+                foreach (DriverLicenceUI driver in _uniqueDrivers)
+                {
+                    if (offence.DriverDetail.DdLicenceNo == driver.licenceNo)
+                    {
+                        //This is a duplicate record of driver.
+                        //Driver is already stored in _uniqueDrivers.
+                        //Stop looping.
+                        driverExists = true;
+                        break;
+                    }
+                }
+                if (driverExists == false)
+                {
+                    //This is a unique record of a driver.
+                    //Store driver licence details.
+                    licence.licenceNo = offence.DriverDetail.DdLicenceNo;
+                    licence.licenceType = offence.DriverDetail.DdLicenceStatus;
+                    _uniqueDrivers.Add(licence);
+                    //Add driver to the corresponding licence type total.
+                    if (offence.DriverDetail.DdLicenceStatus == "Full Licence")
+                        licenceTypeStats.FullLicence = licenceTypeStats.FullLicence + 1;
+                    if (offence.DriverDetail.DdLicenceStatus == "Provisional Licence")
+                        licenceTypeStats.Provisional = licenceTypeStats.Provisional + 1;
+                    if (offence.DriverDetail.DdLicenceStatus == "Disqualified")
+                        licenceTypeStats.Disqualified = licenceTypeStats.Disqualified + 1;
+                    if (offence.DriverDetail.DdLicenceStatus == "No Valid Licence")
+                        licenceTypeStats.NoLicence = licenceTypeStats.NoLicence + 1;
+                    if (offence.DriverDetail.DdLicenceStatus == "Other")
+                        licenceTypeStats.Other = licenceTypeStats.Other + 1;
+                }
+                if (driverExists == true)
+                    driverExists = false;  //Reset for next driver
+            }
+            string message = "The breakdown of driver licences across all driver offences are: " +
+                licenceTypeStats.FullLicence + " Full Licence Holders. " +
+                licenceTypeStats.Provisional + " Provisional Licence Holders. " +
+                licenceTypeStats.Disqualified + " Disqualified Licence Holders. " +
+                licenceTypeStats.NoLicence + " Non Licence drivers. " +
+                licenceTypeStats.Other + " Other.";
+
+            return message;
+        }
+
+        /// <method>
+        /// NewOffenceNotification()  runs 'Penalty Point New Offence Notification' Daily Task.
+        /// </method>
+        public void NewOffenceNotification()
+        {
+            
+        }
+
+        /// <method>
+        /// 28DaysNotification()  runs 'Penalty Points 28 Days Notification' Daily Task.
+        /// </method>
+        public void A28DaysNotification()
+        {
+        }
+
+        /// <method>
+        /// 56DaysNotification()  runs 'Penalty Points 56 Days Notification' Daily Task.
+        /// </method>
+        public void A56DaysNotification()
+        {
+        }
+
+        /// <method>
+        /// DisqualificationNotification()  runs '12 Point Licence Disqualification Notification' Daily Task.
+        /// </method>
+        public string DisqualificationNotification()
+        {
+            //Get list of drivers
+            //Get list of driver offences
+            //For each driver calculate total penalty points accumulated
+            //if penalty points are 12 or more then mark driver status as disqualified
+            //Return results.
+
+            DriverDetailDAL driverDAL = new DriverDetailDAL();
+            List<DriverDetail> allDrivers = driverDAL.ListOfDriverDetails();
+            List<DriverOffence> _drivingOffenceDB = _DAL.ListOfDriverOffences();
+
+            int driverPointsAccumulated = 0;
+            bool offencesExists = false;
+            string message = "Drivers who've accumulated 12 or more penalty points and now have their drivers licence disqualified are: ";
+            foreach (DriverDetail driver in allDrivers)
+            {
+                //if driver is not already disqualified
+                if (driver.DdLicenceStatus != "Disqualified")
+                {
+                    foreach (DriverOffence offence in _drivingOffenceDB) //  for each file
+                    {
+                        if (offence.doStatus != "Deleted")
+                        {
+                            if (offence.DriverDetail.DdLicenceNo == driver.DdLicenceNo)
+                            {
+                                offencesExists = true;
+                                //This is another driving offence belonging to this driver.
+                                //Check penalty points belonging to offence
+                                //Add the penalty points to the drivers total
+                                //IF 12 or more points accumulated then disqualify driver	
+
+                                if (offence.doStatus == "New Offence")
+                                    //penalty points not applied yet.
+                                    driverPointsAccumulated = driverPointsAccumulated + 0;
+                                else if ((offence.doStatus == "Penalty Notification") ||
+                                    (offence.doStatus == "Penalty 28 Days Notification") ||
+                                    (offence.doStatus == "Court Summons"))
+                                {
+                                    //apply penalty points on conviction
+                                    driverPointsAccumulated = driverPointsAccumulated + offence.ListedOffence.Lo56days;
+                                }
+                                else if (offence.doStatus == "Fine Paid")
+                                {
+                                    //apply penalty points on payment
+                                    driverPointsAccumulated = driverPointsAccumulated + offence.ListedOffence.Lo28Days;
+                                }
+                            }//end if
+                        }//end if
+                    }//end for _drivingOffenceDB
+
+                    if (offencesExists == true)
+                    {
+                        //build up results.
+                        if (driverPointsAccumulated >= 12)
+                        {
+                            message = message + driver.DdFName +
+                                     " " + driver.DdSName + " (" +
+                                     driver.DdLicenceNo + ") residing at " +
+                                     driver.DdAddress1 + ", " +
+                                     driver.DdAddress2 + ", " +
+                                     driver.DdAddress3 + " has accumulated " +
+                                     driverPointsAccumulated + " penalty points. ";
+
+                            //Update driver licence status to 'disqualified'
+                            SetDriverDisqualifyStatus(driver.Id);
+                        }//end if driverPointsAccumulated
+
+                        //Reset for next driver
+                        offencesExists = false;
+                        driverPointsAccumulated = 0;
+                    } //end if offencesExists
+                } //end if driver is not already disqualified
+            } //end foreach allDrivers
+
+            return message;
+        }
+
+        /// <method>
+        /// A3YearDeleteNotification()  runs '3 Year Penalty Point Deletion Notification' Daily Task.
+        /// </method>
+        public string A3YearDeleteNotification()
+        {
+            List<DriverOffence> _driverOffenceDB = _DAL.ListOfDriverOffences();
+
+            //loop through existing driver offences.
+            //compare driver offence committed date against current date.
+            //If 3 years has passed mark driver offence as deleted
+            //return results
+            int currentDay = System.DateTime.Now.Day;
+            int currentMonth = System.DateTime.Now.Month;
+            int currentYear = System.DateTime.Now.Year;
+            string message = "Drivers marked with a '3 Year Penalty Point Deletion Notification' are: ";
+            foreach (DriverOffence offence in _driverOffenceDB)
+            {
+                if (offence.doStatus != "Deleted")
+                {
+                    if (offence.doOffenceDate.Year <= (currentYear - 3))
+                        if (offence.doOffenceDate.Month <= currentMonth)
+                            if (offence.doOffenceDate.Day <= currentDay)
+                            {
+                                message = message + offence.DriverDetail.DdFName +
+                                    " " + offence.DriverDetail.DdSName + " (" +
+                                    offence.DriverDetail.DdLicenceNo + ") residing at " +
+                                    offence.DriverDetail.DdAddress1 + ", " +
+                                    offence.DriverDetail.DdAddress2 + ", " +
+                                    offence.DriverDetail.DdAddress3 + " committed a '" +
+                                    offence.ListedOffence.LoDesc + "' offence on " +
+                                    offence.doOffenceDate.Day + "/" +
+                                    offence.doOffenceDate.Month + "/" +
+                                    offence.doOffenceDate.Year +
+                                    " at " + offence.doLocation + ".";
+                                //mark driver offence as deleted.
+                                SetDriverOffenceDeleteStatus(offence.Id);
+                            } //end if 
+                }
+            }//end for _driverOffenceDB
+            return message;
+        }
     }
 }

@@ -17,52 +17,63 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LoDesc, "Type a description for the penalty point offence")
+            @Html.LabelFor(model => model.LoDesc, "Description of offence: ")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.LoDesc)
-            @Html.ValidationMessageFor(model => model.LoDesc, "A description for the penalty point is required.")
+            @Html.ValidationMessageFor(model => model.LoDesc, "Required.")
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Lo28Days, "Type the number of penalty points on payment")
+            @Html.LabelFor(model => model.Lo28Days, "Number of penalty points on payment: ")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Lo28Days)
-            @Html.ValidationMessageFor(model => model.Lo28Days, "The number of penalty points on payment is required.")
+             <!--@Html.EditorFor(model => model.Lo28Days)-->
+            @Html.DropDownListFor(model => model.Lo28Days, (SelectList)ViewData["count28days"])
+            @Html.ValidationMessageFor(model => model.Lo28Days, "Required.")
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Lo56days, "Type the number of penalty points on conviction")
+            @Html.LabelFor(model => model.Lo56days, "Number of penalty points on conviction: ")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Lo56days)
-            @Html.ValidationMessageFor(model => model.Lo56days, "The number of penalty points on conviction is required.")
+            <!--@Html.EditorFor(model => model.Lo56days)-->
+            @Html.DropDownListFor(model => model.Lo56days, (SelectList)ViewData["count56days"])
+            @Html.ValidationMessageFor(model => model.Lo56days, "Required.")
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LoFine28, "Type the amount the offender will pay in 28 days(€)")
+            @Html.LabelFor(model => model.LoFine28, "Amount to pay in 28 days(€): ")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.LoFine28)
-            @Html.ValidationMessageFor(model => model.LoFine28, "The amount to pay in 28 days of conviction is required.")
+            @Html.ValidationMessageFor(model => model.LoFine28, "Required.")
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LoFine56, "Type the amount the offender will pay in next 28 days(€)")
+            @Html.LabelFor(model => model.LoFine56, "Amount to pay in next 28 days(€): ")
         </div>
 
         <div class="editor-field">
             @Html.EditorFor(model => model.LoFine56)
-            @Html.ValidationMessageFor(model => model.LoFine56, "The amount to pay in the next 28 days is required.")
+            @Html.ValidationMessageFor(model => model.LoFine56, "Required.")
         </div>
 
        <div class="editor-label">
-            @Html.LabelFor(model => model.LoMandatoryCourtAppearance, "Mandatory Court Appearance is required?")
+            @Html.LabelFor(model => model.LoMandatoryCourtAppearance, "Mandatory Court Appearance: ")
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.LoMandatoryCourtAppearance)
             @Html.ValidationMessageFor(model => model.LoMandatoryCourtAppearance, "")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LoDateCreated, "Date Offence Created: ")
+        </div>
+
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.LoDateCreated, new { @readonly = "readonly" })
+            @Html.ValidationMessageFor(model => model.LoDateCreated, "Required.")
         </div>
 
         <p>

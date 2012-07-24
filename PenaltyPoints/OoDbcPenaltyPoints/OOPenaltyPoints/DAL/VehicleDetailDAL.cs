@@ -28,7 +28,8 @@ namespace OOPenaltyPoints.DAL
        {
            db.VehicleDetails.Add(vehicledetail);
            db.SaveChanges();
-           return null;
+           //return null;
+           return vehicledetail;
        }
 
        public VehicleDetail DeleteVehicleDetailById(int id)

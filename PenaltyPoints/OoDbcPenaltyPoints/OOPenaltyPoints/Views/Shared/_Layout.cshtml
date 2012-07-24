@@ -11,7 +11,7 @@
     <div class="page">
         <header>
             <div id="title">
-                <h1>My MVC Application</h1>
+                <h1>Motorist Penalty Points Offence System</h1>
             </div>
             <div id="logindisplay">
                 @Html.Partial("_LogOnPartial")
@@ -19,6 +19,11 @@
             <nav>
                 <ul id="menu">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Penalty offences", "Index", "ListedOffence")</li>
+                    <li>@Html.ActionLink("Driver offences", "Index", "DriverOffence")</li>
+                    <li>@Html.ActionLink("Search", "Search", "DriverOffence")</li>
+                    <li>@Html.ActionLink("Statistics", "Statistics", "DriverOffence")</li>
+                    <li>@Html.ActionLink("Daily Tasks", "DailyTasks", "DriverOffence")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
             </nav>

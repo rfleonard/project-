@@ -23,7 +23,7 @@
             <legend>Driving Offence Information:</legend>
             <br />
             @Html.LabelFor(model => model.description,"Description:")
-            @Html.EditorFor(model => model.description)
+            @Html.DropDownListFor(model => model.description, (SelectList)ViewData["doDescription"])
             @Html.ValidationMessageFor(model => model.description,"Required.")
 
             @Html.LabelFor(model => model.gardaId, "Garda Identification No:")
@@ -43,7 +43,7 @@
             <br /><br />
 
             @Html.LabelFor(model => model.status, "Status:")
-            @Html.EditorFor(model => model.status)
+            @Html.DropDownListFor(model => model.status, (SelectList)ViewData["doStatus"])
             @Html.ValidationMessageFor(model => model.status, "Required.")
             <br />
             </fieldset>
@@ -58,7 +58,7 @@
             @Html.ValidationMessageFor(model => model.LicenceNo, "Required.")
 
             @Html.LabelFor(model => model.LicenceStatus, "Status:")
-            @Html.EditorFor(model => model.LicenceStatus)
+            @Html.DropDownListFor(model => model.LicenceStatus, (SelectList)ViewData["licenceStatus"])
             @Html.ValidationMessageFor(model => model.LicenceStatus, "Required.")
 
             <br /><br />
@@ -82,7 +82,7 @@
             @Html.ValidationMessageFor(model => model.Address2, "Required.")
 
             @Html.LabelFor(model => model.Address3, "County:")
-            @Html.EditorFor(model => model.Address3)
+            @Html.DropDownListFor(model => model.Address3, (SelectList)ViewData["County"])
             @Html.ValidationMessageFor(model => model.Address3, "Required.")
             <br />
             </fieldset>

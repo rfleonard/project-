@@ -50,6 +50,57 @@ namespace OOPenaltyPoints.Controllers
         /// </method>
         public ActionResult Create()
         {
+            List<SelectListItem> count = new List<SelectListItem>();
+
+            //Define a driver offence status list
+            count.Add(new SelectListItem
+            {
+                Text = "1",
+                Value = "1",
+                Selected = true
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "2",
+                Value = "2"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "3",
+                Value = "3"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "4",
+                Value = "4"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "5",
+                Value = "5"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "6",
+                Value = "6"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "7",
+                Value = "7"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "8",
+                Value = "8"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "9",
+                Value = "9"
+            });
+            ViewData["count"] = new SelectList(count, "Value", "Text");      
+            
             return View();
         }
 
@@ -103,6 +154,57 @@ namespace OOPenaltyPoints.Controllers
         /// </method>
         public ActionResult Edit(int id)
         {
+            List<SelectListItem> count = new List<SelectListItem>();
+
+            //Define a driver offence status list
+            count.Add(new SelectListItem
+            {
+                Text = "1",
+                Value = "1",
+                Selected = true
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "2",
+                Value = "2"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "3",
+                Value = "3"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "4",
+                Value = "4"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "5",
+                Value = "5"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "6",
+                Value = "6"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "7",
+                Value = "7"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "8",
+                Value = "8"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "9",
+                Value = "9"
+            });
+            ViewData["count28days"] = new SelectList(count, "Value", "Text");
+            ViewData["count56days"] = new SelectList(count, "Value", "Text");        
             return View(_BLL.GetOffence(id));
         }
 
@@ -117,13 +219,64 @@ namespace OOPenaltyPoints.Controllers
             //Instead a offence will be create and assiged the value of the existing offence.
             //The exiting offence will have its status set to false so it cannot be used 
             //in new driving offences but can be accessed by existing driving offences.
+            List<SelectListItem> count = new List<SelectListItem>();
+
+            //Define a driver offence status list
+            count.Add(new SelectListItem
+            {
+                Text = "1",
+                Value = "1",
+                Selected = true
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "2",
+                Value = "2"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "3",
+                Value = "3"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "4",
+                Value = "4"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "5",
+                Value = "5"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "6",
+                Value = "6"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "7",
+                Value = "7"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "8",
+                Value = "8"
+            });
+            count.Add(new SelectListItem
+            {
+                Text = "9",
+                Value = "9"
+            });
+            ViewData["count28days"] = new SelectList(count, "Value", "Text", _offence.Lo28Days);
+            ViewData["count56days"] = new SelectList(count, "Value", "Text", _offence.Lo56days);  
 
             if (ModelState.IsValid)
             {
                 _BLL.EditOffence(_offence);
                 return RedirectToAction("Index");
             }
-            return View("help");
+            return View();
   
         }
        

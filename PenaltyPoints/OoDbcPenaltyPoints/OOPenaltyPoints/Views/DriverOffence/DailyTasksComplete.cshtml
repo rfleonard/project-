@@ -1,0 +1,15 @@
+﻿@model string
+
+
+@{
+    ViewBag.Title = "DailyTasksComplete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Daily Task Completed!</h2>
+
+<p>@ViewBag.Message</p>
+
+<p>
+    @Html.ActionLink("New Daily Task", "DailyTasks", "DriverOffence")
+</p>
