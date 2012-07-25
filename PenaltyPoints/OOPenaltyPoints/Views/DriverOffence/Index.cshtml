@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OOPenaltyPoints.Models.ViewModel.GetDriverOffenceUI>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index Of Driver Offences Committed</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+
+        <th>Description:</th>
+        <th>Firstname:</th>
+        <th>Surname:</th>
+        <th>Licence:</th>
+        <th>Licence Status:</th>
+        <th>Registration:</th>
+        <th>Location:</th>
+        <th>Date:</th>
+        <th>Offence Status:</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>@Html.DisplayFor(modelItem => item.description)</td>
+        <td>@Html.DisplayFor(modelItem => item.FName)</td>
+        <td>@Html.DisplayFor(modelItem => item.SName)</td>
+        <td>@Html.DisplayFor(modelItem => item.LicenceNo)</td>
+        <td>@Html.DisplayFor(modelItem => item.LicenceStatus)</td>
+        <td>@Html.DisplayFor(modelItem => item.Registration)</td>
+        <td>@Html.DisplayFor(modelItem => item.location)</td>
+        <td>@Html.DisplayFor(modelItem => item.offenceDate)</td>
+        <td>@Html.DisplayFor(modelItem => item.status)</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

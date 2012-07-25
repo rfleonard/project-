@@ -1,0 +1,25 @@
+﻿@model OOPenaltyPoints.Models.SummonsDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SummonsDetail</legend>
+
+    <div class="display-label">SdDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdDate)
+    </div>
+
+    <div class="display-label">SdJudgement</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdJudgement)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

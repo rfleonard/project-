@@ -1,0 +1,73 @@
+﻿@model OOPenaltyPoints.Models.ListedOffence
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create  A New Penalty Point Offence</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Fill in the details of the penalty point offence and click 'Create' button when done.</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LoDesc, "Description of offence: ")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LoDesc)
+            @Html.ValidationMessageFor(model => model.LoDesc, "Required.")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Lo28Days, "Number of penalty points on payment: ")
+        </div>
+        <div class="editor-field">
+           @Html.DropDownListFor(model => model.Lo28Days, (SelectList)ViewData["count"])
+            @Html.ValidationMessageFor(model => model.Lo28Days, "Required.")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Lo56days, "Number of penalty points on conviction: ")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Lo56days, (SelectList)ViewData["count"])
+            @Html.ValidationMessageFor(model => model.Lo56days, "Required.")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LoFine28, "Amount to pay in 28 days(€): ")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LoFine28)
+            @Html.ValidationMessageFor(model => model.LoFine28, "Required.")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LoFine56, "Amount to pay in next 28 days(€): ")
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LoFine56)
+            @Html.ValidationMessageFor(model => model.LoFine56, "Required")
+
+       <div class="editor-label">
+            @Html.LabelFor(model => model.LoMandatoryCourtAppearance, "Mandatory Court Appearance: ")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LoMandatoryCourtAppearance)
+            @Html.ValidationMessageFor(model => model.LoMandatoryCourtAppearance, "")
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

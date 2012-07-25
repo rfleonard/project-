@@ -1,0 +1,116 @@
+﻿@model OOPenaltyPoints.Models.ViewModel.DriverOffenceUI
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details Of A Driver Offence</h2>
+
+<fieldset>
+    <legend></legend>
+    <br />
+    <!--------Details of driving offence committed ----------->
+    <fieldset>
+    <legend>Driving Offence Information:</legend>
+    <br />
+    <div class="display-label">Description:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">Garda Identification No:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gardaId)
+    </div>
+
+    <div class="display-label">Location:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.location)
+    </div>
+
+    <div class="display-label">Date:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.offenceDate)
+    </div>
+
+    <div class="display-label">Status:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.status)
+    </div>
+    <br />
+    </fieldset>
+
+    <!--------Details of driver who committed the offence ----------->
+
+   <fieldset>
+   <br />
+   <legend>Driver Information</legend>
+   <br />
+
+    <div class="display-label">Drivers licence number (or PPSN No):</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LicenceNo)
+    </div>
+
+    <div class="display-label">Status:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LicenceStatus)
+    </div>
+
+    <div class="display-label">First Name:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FName)
+    </div>
+
+    <div class="display-label">Surname:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SName)
+    </div>
+
+    <div class="display-label">Address:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address1)
+    </div>
+
+    <div class="display-label">Town:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address2)
+    </div>
+
+    <div class="display-label">County:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address3)
+    </div>
+    <br />
+    </fieldset>
+         
+    <!--------Details of vehicle used in the committed offence ----------->
+   
+    <fieldset>
+    <legend>Vehicle Information</legend>
+    <br />
+    <div class="display-label">Registration No:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Registration)
+    </div>
+
+    <div class="display-label">Make:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Make)
+    </div>
+
+    <div class="display-label">Type:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Type)
+    </div>
+
+    <div class="display-label">Capacity:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Capacity)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

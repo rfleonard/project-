@@ -1,0 +1,23 @@
+﻿@model string
+
+
+@{
+    ViewBag.Title = "DailyTasksComplete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Daily Task Completed!</h2>
+
+@if(string.IsNullOrWhiteSpace(ViewBag.MultilineRaw) == false)
+{
+    <ul>
+        @foreach(var line in @ViewBag.MultilineSplitted)
+        {
+        <li>@line</li>
+        }
+    </ul>
+}
+
+<p>
+    @Html.ActionLink("New Daily Task", "DailyTasks", "DriverOffence")
+</p>

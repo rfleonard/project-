@@ -1,0 +1,82 @@
+﻿@model IEnumerable<OOPenaltyPoints.Models.ViewModel.GetDriverOffenceUI>
+
+@{
+    ViewBag.Title = "SearchComplete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Search Results For Driver Offences Are:</h2>
+
+<p>
+    @Html.ActionLink("New Search", "Search", "DriverOffence")
+</p>
+<table>
+    <tr>
+        <th>
+            Description:
+        </th>
+        <th>
+            Date:
+        </th>
+        <th>
+            Location:
+        </th>
+        <th>
+            Status:
+        </th>
+        <th>
+            Licence No:
+        </th>
+        <th>
+            First Name:
+        </th>
+        <th>
+            Surname:
+        </th>
+        <th>
+            Licence Status:
+        </th>
+        <th>
+            Vehicle Registration:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.offenceDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenceNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LicenceStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Registration)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

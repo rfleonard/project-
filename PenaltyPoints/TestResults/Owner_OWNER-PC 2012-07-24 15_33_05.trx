@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="a4ce3ec4-716f-4d54-b3d4-164dac0b9353" name="Owner@OWNER-PC 2012-07-24 15:33:05" runUser="Owner-PC\Owner" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="4966eb02-23e2-4eb2-b308-31e2146453b7">
+    <Deployment runDeploymentRoot="Owner_OWNER-PC 2012-07-24 15_33_05">
+      <DeploymentItem filename="C:\Users\Owner\Documents\GitHub\project\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints\bin\OOPenaltyPoints.dll" />
+      <DeploymentItem filename="C:\Users\Owner\Documents\GitHub\project\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-07-24T15:33:05.2172387+01:00" queuing="2012-07-24T15:33:07.5783737+01:00" start="2012-07-24T15:33:07.6983806+01:00" finish="2012-07-24T15:33:11.6406061+01:00" />
+  <ResultSummary outcome="Inconclusive">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ListOfListedOffencesTest" storage="c:\users\owner\documents\github\project\penaltypointsmon23julsoaunittests\penaltypoints\oodbcpenaltypoints\oopenaltypoints.tests\bin\debug\oopenaltypoints.tests.dll" id="83f9d785-cfd0-8844-0ff0-64b9293445ff">
+      <Execution id="7ffe4a8a-05b1-4753-8fa6-0eb1200774da" />
+      <TestMethod codeBase="C:/Users/Owner/Documents/GitHub/project/PenaltyPointsMon23julSOAUnitTests/PenaltyPoints/OoDbcPenaltyPoints/OOPenaltyPoints.Tests/bin/Debug/OOPenaltyPoints.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="OOPenaltyPoints.Tests.ListedOffenceDALTest, OOPenaltyPoints.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ListOfListedOffencesTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="83f9d785-cfd0-8844-0ff0-64b9293445ff" executionId="7ffe4a8a-05b1-4753-8fa6-0eb1200774da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="7ffe4a8a-05b1-4753-8fa6-0eb1200774da" testId="83f9d785-cfd0-8844-0ff0-64b9293445ff" testName="ListOfListedOffencesTest" computerName="OWNER-PC" duration="00:00:01.8309236" startTime="2012-07-24T15:33:07.7763850+01:00" endTime="2012-07-24T15:33:10.0975178+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Inconclusive" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7ffe4a8a-05b1-4753-8fa6-0eb1200774da">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Inconclusive failed. Verify the correctness of this test method.</Message>
+          <StackTrace>   at OOPenaltyPoints.Tests.ListedOffenceDALTest.ListOfListedOffencesTest() in C:\Users\AnthonyOToole\Desktop\Semester 3\EntityFrameworkResearch\4.Project Versions\PenaltyPointsMon23julSOAUnitTests\PenaltyPoints\OoDbcPenaltyPoints\OOPenaltyPoints.Tests\DAL\ListedOffenceDALTest.cs:line 244
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
