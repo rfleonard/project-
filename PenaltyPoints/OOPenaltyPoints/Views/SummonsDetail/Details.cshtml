@@ -9,12 +9,47 @@
 <fieldset>
     <legend>SummonsDetail</legend>
 
-    <div class="display-label">SdDate</div>
+    <div class="display-label">Date Issued:</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.SdDate)
     </div>
 
-    <div class="display-label">SdJudgement</div>
+    <div class="display-label">Licence Number:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdLicenceNo)
+    </div>
+
+    <div class="display-label">Registration:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdRegistration)
+    </div>
+
+    <div class="display-label">First Name:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdFName)
+    </div>
+
+    <div class="display-label">Surname:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdSName)
+    </div>
+
+    <div class="display-label">Address:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdAddress1)
+    </div>
+
+    <div class="display-label">Town:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdAddress2)
+    </div>
+
+    <div class="display-label">County:</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SdAddress3)
+    </div>
+
+    <div class="display-label">Judgement:</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.SdJudgement)
     </div>
