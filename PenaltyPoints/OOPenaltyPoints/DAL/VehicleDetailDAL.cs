@@ -36,7 +36,7 @@ namespace OOPenaltyPoints.DAL
        {
            VehicleDetail vehicledetail = db.VehicleDetails.Find(id);
            db.VehicleDetails.Remove(vehicledetail);
-           db.SaveChanges();
+          db.SaveChanges();
 
            return null;
        }

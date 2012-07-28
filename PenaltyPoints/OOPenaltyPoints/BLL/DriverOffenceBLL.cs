@@ -256,9 +256,8 @@ namespace OOPenaltyPoints.BLL
 
              //Update driver details            
              DriverDetailDAL driverDAL = new DriverDetailDAL();
-             DriverDetail driver = driverDAL.DriverDetailFindById(_driverOffenceDB.DriverDetail.Id);
-                        
-             _driverOffenceDB.DriverDetail.DdLicenceNo = driverOffenceUI.LicenceNo.ToString();
+                                    
+             //_driverOffenceDB.DriverDetail.DdLicenceNo = driverOffenceUI.LicenceNo.ToString();
              _driverOffenceDB.DriverDetail.DdFName = driverOffenceUI.FName.ToString();
              _driverOffenceDB.DriverDetail.DdSName = driverOffenceUI.SName.ToString();
              _driverOffenceDB.DriverDetail.DdAddress1 = driverOffenceUI.Address1.ToString();
@@ -270,11 +269,10 @@ namespace OOPenaltyPoints.BLL
             
             //update vehicle details
              VehicleDetailDAL vehicleDAL = new VehicleDetailDAL();
-             VehicleDetail vehicle = vehicleDAL.DeleteVehicleDetailById(_driverOffenceDB.VehicleDetails.Id);
 
-            _driverOffenceDB.VehicleDetails.VdRegistration = driverOffenceUI.Registration.ToString();
+           _driverOffenceDB.VehicleDetails.VdRegistration = driverOffenceUI.Registration.ToString();
             _driverOffenceDB.VehicleDetails.VdMake = driverOffenceUI.Make.ToString();
-            _driverOffenceDB.VehicleDetails.VdType = driverOffenceUI.Type.ToString();
+           _driverOffenceDB.VehicleDetails.VdType = driverOffenceUI.Type.ToString();
             _driverOffenceDB.VehicleDetails.VdCubicCapacity = driverOffenceUI.Capacity;
             vehicleDAL.EditVehicleDetail(_driverOffenceDB.VehicleDetails);
              

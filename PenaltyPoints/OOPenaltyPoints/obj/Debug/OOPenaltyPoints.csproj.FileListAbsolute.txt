@@ -75,3 +75,10 @@ C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints\OOPenaltyPoints\bin\Entit
 C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints\OOPenaltyPoints\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints\OOPenaltyPoints\obj\Debug\OOPenaltyPoints.dll
 C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints\OOPenaltyPoints\obj\Debug\OOPenaltyPoints.pdb
+C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints - Copy\OOPenaltyPoints\bin\OOPenaltyPoints.dll
+C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints - Copy\OOPenaltyPoints\bin\OOPenaltyPoints.pdb
+C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints - Copy\OOPenaltyPoints\bin\EntityFramework.dll
+C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints - Copy\OOPenaltyPoints\bin\EntityFramework.xml
+C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints - Copy\OOPenaltyPoints\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints - Copy\OOPenaltyPoints\obj\Debug\OOPenaltyPoints.dll
+C:\Users\Owner\Documents\GitHub\project-\PenaltyPoints - Copy\OOPenaltyPoints\obj\Debug\OOPenaltyPoints.pdb
